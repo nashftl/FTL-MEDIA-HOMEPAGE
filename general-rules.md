@@ -21,6 +21,26 @@
 - Store components inside `src/components/`.
 - Large projects should separate each **major feature** into its own folder.
 
+### Example Structure
+
+Here's a basic structure based on these rules:
+
+```
+/src
+├── /components
+│   ├── Button.jsx            ← React component (PascalCase)
+│   └── NavBar.jsx            ← React component (PascalCase)
+├── /features
+│   ├── /auth
+│   │   ├── LoginForm.jsx     ← React component (PascalCase)
+│   │   └── authUtils.js      ← Utility functions (camelCase)
+│   └── /dashboard
+│       ├── Dashboard.jsx     ← React component (PascalCase)
+│       └── ChartCard.jsx     ← React component (PascalCase)
+├── App.js                    ← Root component
+└── index.js                  ← Entry point
+```
+
 ## Error Handling & Logging
 
 - Use **try-catch** blocks for error handling.
