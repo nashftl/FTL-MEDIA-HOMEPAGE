@@ -94,7 +94,7 @@ The website will be broken down into the following reusable React components:
     - Each box contains a list of technology tags (e.g., React, Node.js, Web Audio API, Docker).
   - *Note:* Refined card styling with darker borders, darker tag backgrounds, adjusted padding, `font-semibold` for headings, and `text-gray-500` for tags for a sleeker, more minimalistic look.
 
-- [ ] ** 5.`FeaturedProjects.jsx`**
+- [x] ** 5.`FeaturedProjects.jsx`**
 
   - **Purpose:** A gallery of selected projects.
   - **Elements:**
@@ -109,7 +109,10 @@ The website will be broken down into the following reusable React components:
       - "Live Demo" button.
       - "Code" button/link.
   - **Functionality:**
-    - Filtering logic to show/hide projects based on the selected category.
+    - Filtering logic to show/hide projects based on the selected category (All, Music, Utility, Web Design, Small Business).
+    - Projects will also be implicitly categorized by their Frontend/Backend technology tags.
+    - "Live Demo" links will point to Netlify deployments.
+    - "Code" links will point to GitHub repositories.
 
 - [ ] ** 6.`Testimonials.jsx`**
 
