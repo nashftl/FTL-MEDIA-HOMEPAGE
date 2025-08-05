@@ -85,7 +85,7 @@ The website will be broken down into the following reusable React components:
       - A brief description.
       - A list of specific offerings.
 
-- [ ] ** 4. `TechnicalExpertise.jsx`**
+- [x] ** 4. `TechnicalExpertise.jsx`**
 
   - **Purpose:** To list the technologies and tools used.
   - **Elements:**
@@ -162,8 +162,8 @@ The website will be broken down into the following reusable React components:
 ## 5. Build & Development Workflow
 
 - [x] 1.  **Component Scaffolding:** Create empty files for all components listed in section 2.
-- [ ] 2.  **Static Markup:** Build out the JSX for each component with static, hardcoded content to match the design. (Includes adding `aria-label` for accessibility and visually hidden headings where appropriate.)
-- [ ] 3.  **Styling:** Apply Tailwind CSS classes to style each component.
+- [x] 2.  **Static Markup:** Build out the JSX for each component with static, hardcoded content to match the design. (Includes adding `aria-label` for accessibility and visually hidden headings where appropriate.)
+- [x] 3.  **Styling:** Apply Tailwind CSS classes to style each component.
 - [ ] 4.  **Component Integration:** Assemble all components into the main `App.jsx` file.
 - [ ] 5.  **Interactivity:** Implement dynamic functionality (e.g., project filtering, form handling, mobile menu).
 - [ ] 6.  **Testing:** Perform manual testing across different browsers and screen sizes to ensure responsiveness and functionality.
