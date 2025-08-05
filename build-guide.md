@@ -95,6 +95,7 @@ The website will be broken down into the following reusable React components:
   - *Note:* Refined card styling with darker borders, darker tag backgrounds, adjusted padding, `font-semibold` for headings, and `text-gray-500` for tags for a sleeker, more minimalistic look.
 
 - [x] ** 5.`FeaturedProjects.jsx`**
+    - *Note:* Implemented filtering functionality based on category and tech tags, with dynamic button styling for the active filter.
 
   - **Purpose:** A gallery of selected projects.
   - **Elements:**
