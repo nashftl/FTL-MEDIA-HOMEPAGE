@@ -62,7 +62,7 @@ The website will be broken down into the following reusable React components:
     - Smooth scrolling to corresponding sections.
     - Responsive hamburger menu for mobile.
 
-- [ ] ** 2. `Hero.jsx`**
+- [x] ** 2. `Hero.jsx`**
 
   - **Purpose:** The main landing section.
   - **Elements:**
