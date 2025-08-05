@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const Contact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -22,8 +22,10 @@ const Contact = () => {
     setMessage(event.target.value);
   };
 
-  const recipientEmail = 'info@ftlmediaagency.co.za'; // Your email address
-  const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}
+  const recipientEmail = "info@ftlmediaagency.co.za"; // Your email address
+  const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(`Name: ${name}
 Email: ${email}
 
 ${message}`)}`;
@@ -86,7 +88,15 @@ ${message}`)}`;
                 >
                   Name
                 </label>
-                <input type="text" id="name" name="name" value={name} onChange={handleNameChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white" required />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={handleNameChange}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
+                  required
+                />
               </div>
               <div>
                 <label
@@ -95,7 +105,15 @@ ${message}`)}`;
                 >
                   Email
                 </label>
-                <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white" required />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
+                  required
+                />
               </div>
               <div>
                 <label
@@ -139,9 +157,22 @@ ${message}`)}`;
                 >
                   Message
                 </label>
-                <textarea id="message" name="message" rows="5" value={message} onChange={handleMessageChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white" required></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  value={message}
+                  onChange={handleMessageChange}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
+                  required
+                ></textarea>
               </div>
-              <a href={mailtoLink} className="bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 text-center" target="_blank" rel="noopener noreferrer">
+              <a
+                href={mailtoLink}
+                className="bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 text-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Send Message
               </a>
             </form>
