@@ -74,7 +74,6 @@ The website will be broken down into the following reusable React components:
     - Key stats section: "50+ Projects Completed", "4 Service Categories", "100% Client Satisfaction".
 
 - [x] ** 3. `Services.jsx`**
-    - *Note:* Adjusted styling of service cards to match Figma design more closely (darker background, border, rounded corners, and text colors).
 
   - **Purpose:** To showcase the four main service areas.
   - **Elements:**
