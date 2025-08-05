@@ -60,7 +60,7 @@ The website will be broken down into the following reusable React components:
   - **Functionality:**
     - Sticky/fixed positioning on scroll.
     - Smooth scrolling to corresponding sections.
-    - Responsive hamburger menu for mobile.
+    - Responsive hamburger menu for mobile (implemented with `useState` for toggle and conditional rendering).
 
 - [x] ** 2. `Hero.jsx`**
 
