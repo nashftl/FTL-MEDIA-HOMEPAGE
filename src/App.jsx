@@ -6,6 +6,7 @@ import TechnicalExpertise from "./components/TechnicalExpertise";
 import FeaturedProjects from "./components/FeaturedProjects";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <FeaturedProjects />
       <Testimonials />
       <Contact />
+      <Footer />
     </div>
   );
 }

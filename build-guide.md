@@ -144,7 +144,8 @@ The website will be broken down into the following reusable React components:
       - Message (textarea)
       - "Send Message" button.
 
-- [ ] ** 8. `Footer.jsx`**
+- [x] ** 8. `Footer.jsx`**
+    - *Note:* Adjusted responsiveness to center content on mobile, preventing stacking on the left, while maintaining left alignment on larger screens.
   - **Purpose:** The website footer.
   - **Elements:**
     - Logo and brief company description.
