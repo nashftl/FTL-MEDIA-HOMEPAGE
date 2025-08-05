@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between p-4 bg-black text-white">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-black text-white">
       {/* Logo and Website Name */}
       <div className="flex items-center" aria-label="Website Logo and Name">
         <img
