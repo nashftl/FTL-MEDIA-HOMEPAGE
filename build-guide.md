@@ -95,7 +95,7 @@ The website will be broken down into the following reusable React components:
   - *Note:* Refined card styling with darker borders, darker tag backgrounds, adjusted padding, `font-semibold` for headings, and `text-gray-500` for tags for a sleeker, more minimalistic look.
 
 - [x] ** 5.`FeaturedProjects.jsx`**
-    - *Note:* Implemented filtering functionality based on category and tech tags, with dynamic button styling for the active filter.
+    - *Note:* Implemented filtering functionality based on category and tech tags, with dynamic button styling for the active filter. Adjusted text colors for project titles (white), descriptions (`text-gray-400`), and category/tech tags (`text-gray-500`).
 
   - **Purpose:** A gallery of selected projects.
   - **Elements:**
@@ -115,7 +115,7 @@ The website will be broken down into the following reusable React components:
     - "Live Demo" links will point to Netlify deployments.
     - "Code" links will point to GitHub repositories.
 
-- [ ] ** 6.`Testimonials.jsx`**
+- [x] ** 6.`Testimonials.jsx`**
 
   - **Purpose:** To display client feedback.
   - **Elements:**
