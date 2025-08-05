@@ -92,10 +92,11 @@ The website will be broken down into the following reusable React components:
     - Section Title: "Technical Expertise".
     - Four category boxes (Frontend, Backend, Music Tech, Tools & Platform).
     - Each box contains a list of technology tags (e.g., React, Node.js, Web Audio API, Docker).
-  - *Note:* Refined card styling with darker borders, darker tag backgrounds, adjusted padding, `font-semibold` for headings, and `text-gray-500` for tags for a sleeker, more minimalistic look.
+  - _Note:_ Refined card styling with darker borders, darker tag backgrounds, adjusted padding, `font-semibold` for headings, and `text-gray-500` for tags for a sleeker, more minimalistic look. Card background changed to `bg-black`.
 
 - [x] ** 5.`FeaturedProjects.jsx`**
-    - *Note:* Implemented filtering functionality based on category and tech tags, with dynamic button styling for the active filter. Adjusted text colors for project titles (white), descriptions (`text-gray-400`), and category/tech tags (`text-gray-500`).
+
+  - _Note:_ Implemented filtering functionality based on category and tech tags, with dynamic button styling for the active filter. Adjusted text colors for project titles (white), descriptions (`text-gray-400`), and category/tech tags (`text-gray-500`).
 
   - **Purpose:** A gallery of selected projects.
   - **Elements:**
@@ -127,7 +128,8 @@ The website will be broken down into the following reusable React components:
       - Client avatar, name, and company.
 
 - [x] ** 7. `Contact.jsx`**
-    - *Note:* Implemented `mailto` functionality for the "Send Message" button, dynamically generating the email link with form field values. Added state management for all form fields.
+
+  - _Note:_ Implemented `mailto` functionality for the "Send Message" button, dynamically generating the email link with form field values. Added state management for all form fields.
 
   - **Purpose:** Contact information and form.
   - **Elements:**
@@ -145,7 +147,7 @@ The website will be broken down into the following reusable React components:
       - "Send Message" button.
 
 - [x] ** 8. `Footer.jsx`**
-    - *Note:* Adjusted responsiveness to center content on mobile, preventing stacking on the left, while maintaining left alignment on larger screens.
+  - _Note:_ Adjusted responsiveness to center content on mobile, preventing stacking on the left, while maintaining left alignment on larger screens.
   - **Purpose:** The website footer.
   - **Elements:**
     - Logo and brief company description.
@@ -170,7 +172,7 @@ The website will be broken down into the following reusable React components:
 
 - [x] 1.  **Component Scaffolding:** Create empty files for all components listed in section 2.
 - [x] 2.  **Static Markup:** Build out the JSX for each component with static, hardcoded content to match the design. (Includes adding `aria-label` for accessibility and visually hidden headings where appropriate.)
-- [x] 3.  **Styling:** Apply Tailwind CSS classes to style each component.
+- [ ] 3.  **Styling:** Apply Tailwind CSS classes to style each component. (Includes applying alternating background colors to component sections for distinction, and refining text colors for headings and body text.)
 - [ ] 4.  **Component Integration:** Assemble all components into the main `App.jsx` file.
 - [ ] 5.  **Interactivity:** Implement dynamic functionality (e.g., project filtering, form handling, mobile menu).
 - [ ] 6.  **Testing:** Perform manual testing across different browsers and screen sizes to ensure responsiveness and functionality.
