@@ -161,7 +161,7 @@ The website will be broken down into the following reusable React components:
 
 ## 5. Build & Development Workflow
 
-- [ ] 1.  **Component Scaffolding:** Create empty files for all components listed in section 2.
+- [x] 1.  **Component Scaffolding:** Create empty files for all components listed in section 2.
 - [ ] 2.  **Static Markup:** Build out the JSX for each component with static, hardcoded content to match the design.
 - [ ] 3.  **Styling:** Apply Tailwind CSS classes to style each component.
 - [ ] 4.  **Component Integration:** Assemble all components into the main `App.jsx` file.
