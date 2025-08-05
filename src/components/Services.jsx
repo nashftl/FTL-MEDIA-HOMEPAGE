@@ -10,6 +10,7 @@ const Services = () => {
           unique industry needs.
         </p>
 
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Music Services Card */}
           <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">

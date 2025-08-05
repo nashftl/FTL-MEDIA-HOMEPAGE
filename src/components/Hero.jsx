@@ -4,6 +4,7 @@ const Hero = () => {
   return (
     <section id="home" className="bg-black text-white py-20">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
+        {/* Hero Content (Text and Buttons) */}
         <div className="md:w-1/2 text-center md:text-left">
           <p className="text-sm font-semibold text-gray-400 mb-2">
             Available for new projects
@@ -16,6 +17,7 @@ const Hero = () => {
             solutions that elevate your brand and streamline your workflow with
             cutting-edge technology.
           </p>
+          {/* Call to Action Buttons */}
           <div className="flex justify-center md:justify-start space-x-4">
             <button className="bg-white text-black px-6 py-3 rounded-md font-semibold">
               View My Work
@@ -24,7 +26,9 @@ const Hero = () => {
               Explore Services
             </button>
           </div>
-          <div className="flex justify-center md:justify-start space-x-12 mt-12">
+          {/* Key Statistics */}
+          <div className="flex justify-center md:justify-start space-x-12 mt-12" aria-label="Key Statistics">
+            <h2 className="sr-only">Key Statistics</h2>
             <div>
               <p className="text-3xl font-bold">50+</p>
               <p className="text-gray-400">Projects Completed</p>
@@ -39,6 +43,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+        {/* Hero Image */}
         <div className="md:w-1/2 mt-10 md:mt-0">
           <img
             src="/src/assets/images/hero-image.jpg"
