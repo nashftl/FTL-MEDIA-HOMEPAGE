@@ -92,6 +92,7 @@ The website will be broken down into the following reusable React components:
     - Section Title: "Technical Expertise".
     - Four category boxes (Frontend, Backend, Music Tech, Tools & Platform).
     - Each box contains a list of technology tags (e.g., React, Node.js, Web Audio API, Docker).
+  - *Note:* Refined card styling with darker borders, darker tag backgrounds, adjusted padding, `font-semibold` for headings, and `text-gray-500` for tags for a sleeker, more minimalistic look.
 
 - [ ] ** 5.`FeaturedProjects.jsx`**
 
