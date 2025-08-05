@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FeaturedProjects = () => {
   const projects = [
@@ -64,6 +64,16 @@ const FeaturedProjects = () => {
     },
   ];
 
+  const [activeFilter, setActiveFilter] = useState('All');
+
+  const filteredProjects = activeFilter === 'All'
+    ? projects
+    : projects.filter(project => project.category === activeFilter || project.techTags.includes(activeFilter));
+
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+  };
+
   return (
     <section id="portfolio" className="bg-black text-white py-20">
       <div className="container mx-auto text-center">
@@ -72,16 +82,41 @@ const FeaturedProjects = () => {
 
         {/* Filter Buttons */}
         <div className="flex justify-center space-x-4 mb-12">
-          <button className="bg-gray-700 text-white px-4 py-2 rounded-full">All</button>
-          <button className="bg-gray-800 text-gray-400 px-4 py-2 rounded-full">Music</button>
-          <button className="bg-gray-800 text-gray-400 px-4 py-2 rounded-full">Utility</button>
-          <button className="bg-gray-800 text-gray-400 px-4 py-2 rounded-full">Web Design</button>
-          <button className="bg-gray-800 text-gray-400 px-4 py-2 rounded-full">Small Business</button>
+          <button
+            className={`px-4 py-2 rounded-full ${activeFilter === 'All' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-gray-400'}`}
+            onClick={() => handleFilterClick('All')}
+          >
+            All
+          </button>
+          <button
+            className={`px-4 py-2 rounded-full ${activeFilter === 'Music' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-gray-400'}`}
+            onClick={() => handleFilterClick('Music')}
+          >
+            Music
+          </button>
+          <button
+            className={`px-4 py-2 rounded-full ${activeFilter === 'Utility' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-gray-400'}`}
+            onClick={() => handleFilterClick('Utility')}
+          >
+            Utility
+          </button>
+          <button
+            className={`px-4 py-2 rounded-full ${activeFilter === 'Web Design' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-gray-400'}`}
+            onClick={() => handleFilterClick('Web Design')}
+          >
+            Web Design
+          </button>
+          <button
+            className={`px-4 py-2 rounded-full ${activeFilter === 'Small Business' ? 'bg-gray-700 text-white' : 'bg-gray-800 text-gray-400'}`}
+            onClick={() => handleFilterClick('Small Business')}
+          >
+            Small Business
+          </button>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <div key={project.id} className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
               <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
               <div className="p-6 text-left">
