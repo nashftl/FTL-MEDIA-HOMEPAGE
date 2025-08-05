@@ -9,8 +9,8 @@ const TechnicalExpertise = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Frontend Card */}
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
-            <h3 className="text-2xl font-semibold mb-4">Frontend</h3>
+          <div className="bg-black p-6 rounded-xl border border-gray-800">
+            <h3 className="text-2xl font-semibold mb-4 text-white">Frontend</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">React</span>
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Next.js</span>
@@ -23,8 +23,8 @@ const TechnicalExpertise = () => {
           </div>
 
           {/* Backend Card */}
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
-            <h3 className="text-2xl font-semibold mb-4">Backend</h3>
+          <div className="bg-black p-6 rounded-xl border border-gray-800">
+            <h3 className="text-2xl font-semibold mb-4 text-white">Backend</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Node.js</span>
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Python</span>
@@ -37,8 +37,8 @@ const TechnicalExpertise = () => {
           </div>
 
           {/* Music Tech Card */}
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
-            <h3 className="text-2xl font-semibold mb-4">Music Tech</h3>
+          <div className="bg-black p-6 rounded-xl border border-gray-800">
+            <h3 className="text-2xl font-semibold mb-4 text-white">Music Tech</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Web Audio API</span>
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Tone.js</span>
@@ -50,8 +50,8 @@ const TechnicalExpertise = () => {
           </div>
 
           {/* Tools & Platform Card */}
-          <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
-            <h3 className="text-2xl font-semibold mb-4">Tools & Platform</h3>
+          <div className="bg-black p-6 rounded-xl border border-gray-800">
+            <h3 className="text-2xl font-semibold mb-4 text-white">Tools & Platform</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Git</span>
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Docker</span>

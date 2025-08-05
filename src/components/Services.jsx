@@ -13,16 +13,16 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Music Services Card */}
-          <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
+          <div className="bg-black p-8 rounded-xl border border-gray-800">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/music.svg" alt="Music Icon" className="h-10 w-10" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">Music</h3>
-            <p className="text-gray-200 mb-4">
+            <h3 className="text-2xl font-bold mb-2 text-white">Music</h3>
+            <p className="text-gray-400 mb-4">
               Audio production tools, streaming platforms, and music management
               systems tailored for artists and producers.
             </p>
-            <ul className="text-left text-gray-300 space-y-2">
+            <ul className="text-left text-gray-500 space-y-2">
               <li>• Audio Processing</li>
               <li>• Streaming Integration</li>
               <li>• Music Analytics</li>
@@ -31,16 +31,16 @@ const Services = () => {
           </div>
 
           {/* Utility Services Card */}
-          <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
+          <div className="bg-black p-8 rounded-xl border border-gray-800">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/utility.svg" alt="Utility Icon" className="h-10 w-10" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">Utility</h3>
-            <p className="text-gray-200 mb-4">
+            <h3 className="text-2xl font-bold mb-2 text-white">Utility</h3>
+            <p className="text-gray-400 mb-4">
               Practical web applications and tools that solve everyday problems
               and improve productivity.
             </p>
-            <ul className="text-left text-gray-300 space-y-2">
+            <ul className="text-left text-gray-500 space-y-2">
               <li>• Automation Tools</li>
               <li>• Data Processing</li>
               <li>• API Integration</li>
@@ -49,16 +49,16 @@ const Services = () => {
           </div>
 
           {/* Web Design Services Card */}
-          <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
+          <div className="bg-black p-8 rounded-xl border border-gray-800">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/web_design.svg" alt="Web Design Icon" className="h-10 w-10" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">Web Design</h3>
-            <p className="text-gray-200 mb-4">
+            <h3 className="text-2xl font-bold mb-2 text-white">Web Design</h3>
+            <p className="text-gray-400 mb-4">
               Beautiful, responsive websites that capture your brand essence and
               engage your audience.
             </p>
-            <ul className="text-left text-gray-300 space-y-2">
+            <ul className="text-left text-gray-500 space-y-2">
               <li>• Responsive Design</li>
               <li>• UI/UX Design</li>
               <li>• Brand Identity</li>
@@ -67,16 +67,16 @@ const Services = () => {
           </div>
 
           {/* Small Business Services Card */}
-          <div className="bg-gray-900 p-8 rounded-xl border border-gray-700">
+          <div className="bg-black p-8 rounded-xl border border-gray-800">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/small_business.svg" alt="Small Business Icon" className="h-10 w-10" />
             </div>
-            <h3 className="text-2xl font-bold mb-2">Small Business</h3>
-            <p className="text-gray-200 mb-4">
+            <h3 className="text-2xl font-bold mb-2 text-white">Small Business</h3>
+            <p className="text-gray-400 mb-4">
               Complete digital solutions for small businesses, from e-commerce
               to customer management.
             </p>
-            <ul className="text-left text-gray-300 space-y-2">
+            <ul className="text-left text-gray-500 space-y-2">
               <li>• E-commerce Platforms</li>
               <li>• CRM Systems</li>
               <li>• Booking Systems</li>
