@@ -49,7 +49,7 @@ This document outlines the plan for building the web services portfolio website 
 
 The website will be broken down into the following reusable React components:
 
-- [ ] ** 1. `Header.jsx`**
+- [x] ** 1. `Header.jsx`**
 
   - **Purpose:** Main navigation bar.
   - **Elements:**
