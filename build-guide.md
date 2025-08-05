@@ -126,7 +126,8 @@ The website will be broken down into the following reusable React components:
       - Client quote.
       - Client avatar, name, and company.
 
-- [ ] ** 7. `Contact.jsx`**
+- [x] ** 7. `Contact.jsx`**
+    - *Note:* Implemented `mailto` functionality for the "Send Message" button, dynamically generating the email link with form field values. Added state management for all form fields.
 
   - **Purpose:** Contact information and form.
   - **Elements:**
