@@ -4,7 +4,7 @@ const FeaturedProjects = () => {
   const projects = [
     {
       id: 1,
-      image: '/src/assets/images/project-1.png', // Placeholder
+      image: '/images/projects/1.Landing-header.png',
       category: 'Music',
       title: 'SoundWave Studio',
       description: 'A comprehensive audio production platform with real-time collaboration features for musicians and producers.',
@@ -14,7 +14,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 2,
-      image: '/src/assets/images/project-2.png', // Placeholder
+      image: '/images/projects/2. Services.png',
       category: 'Music',
       title: 'Artist Portfolio Hub',
       description: 'A sleek portfolio website for emerging artists to showcase their work and connect with fans.',
@@ -24,7 +24,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 3,
-      image: '/src/assets/images/project-3.png', // Placeholder
+      image: '/images/projects/3. technical-experise.png',
       category: 'Utility',
       title: 'TaskFlow Manager',
       description: 'An intelligent task management system with automated workflows and team collaboration features.',
@@ -34,7 +34,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 4,
-      image: '/src/assets/images/project-4.png', // Placeholder
+      image: '/images/projects/4. featured-projects.png',
       category: 'Web Design',
       title: 'Zen Architecture',
       description: 'A modern architecture firm website with stunning portfolio galleries and smooth animations.',
@@ -44,7 +44,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 5,
-      image: '/src/assets/images/project-5.png', // Placeholder
+      image: '/images/projects/5.testimonials.png',
       category: 'Small Business',
       title: 'LocalCraft Marketplace',
       description: 'E-commerce platform connecting local artisans with customers, featuring inventory management and analytics.',
@@ -54,7 +54,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 6,
-      image: '/src/assets/images/project-6.png', // Placeholder
+      image: '/images/projects/6.web-services.png',
       category: 'Small Business',
       title: 'MedCare Booking',
       description: 'Healthcare appointment booking system with patient management and automated reminders.',
@@ -118,7 +118,7 @@ const FeaturedProjects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
             <div key={project.id} className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" loading="lazy" />
               <div className="p-6 text-left">
                 <span className="text-sm text-gray-400 mb-2 block">{project.category}</span>
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
