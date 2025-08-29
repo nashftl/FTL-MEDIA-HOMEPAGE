@@ -19,28 +19,38 @@
 
 - status: update api search and backend info
 
-4. label ops - An operations dashboard tailored for music labels, designed to monitor and track all aspects of label management. From tracking releases and artist activities to overseeing administrative tasks, this platform streamlines workflows with user login and admin profile features for secure and efficient management.
+4. ftl media - a home page for a PR/Marketing and web services firm
+
+- https://ftl-media.netlify.app/
+- https://github.com/nashftl/ftl-media.git
+
+5. ftl radio - A homepage for record label, FTL Radio.
+
+- https://ftlradio.netlify.app/
+- https://github.com/nashftl/ftl-radio-homepage.git
+
+6. label ops - An operations dashboard tailored for music labels, designed to monitor and track all aspects of label management. From tracking releases and artist activities to overseeing administrative tasks, this platform streamlines workflows with user login and admin profile features for secure and efficient management.
 
 - https://label-ops.netlify.app/
 - https://github.com/nashftl/label-ops.git
 
 - status: backend integration + user login/admin profiles
 
-5. retro artist portfolio - Retro-styled homepage template for music labels or artist collectives. This portfolio site combines vintage design elements with modern web functionality to create a unique online presence for the label or collective.
+7. retro artist portfolio - Retro-styled homepage template for music labels or artist collectives. This portfolio site combines vintage design elements with modern web functionality to create a unique online presence for the label or collective.
 
 - https://retro-artist-portfolio.netlify.app/
 - https://github.com/nashftl/retro-label-portfolio.git
 
 - staus: needs loadiing speed update
 
-6. spaza shop - An e-commerce platform featuring a product catalog, shopping cart, and checkout system. Designed to provide an online shopping experience, this store supports product browsing, order management, and secure transactions, catering to small businesses looking to establish an online storefront.
+8. spaza shop - An e-commerce platform featuring a product catalog, shopping cart, and checkout system. Designed to provide an online shopping experience, this store supports product browsing, order management, and secure transactions, catering to small businesses looking to establish an online storefront.
 
 - https://spaza-shop.netlify.app/
 - https://github.com/nashftl/spaza-shop.git
 
 - status: needs checkout page and backend integration
 
-7. tarrot card demo - An atmospheric tarot card reading application with a dark theme, offering users a way to explore tarot card meanings and readings. The interface focuses on immersive imagery and intuitive navigation to create a mystical and user-friendly experience.
+9. tarrot card demo - An atmospheric tarot card reading application with a dark theme, offering users a way to explore tarot card meanings and readings. The interface focuses on immersive imagery and intuitive navigation to create a mystical and user-friendly experience.
 
 - https://tarot-card-demo.netlify.app/
 - https://github.com/nashftl/tarot-reader.git
