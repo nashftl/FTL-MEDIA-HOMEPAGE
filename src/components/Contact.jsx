@@ -94,7 +94,7 @@ ${message}`)}`;
                   name="name"
                   value={name}
                   onChange={handleNameChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
                   required
                 />
               </div>
@@ -111,7 +111,7 @@ ${message}`)}`;
                   name="email"
                   value={email}
                   onChange={handleEmailChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
                   required
                 />
               </div>
@@ -127,7 +127,7 @@ ${message}`)}`;
                   name="subject"
                   value={subject}
                   onChange={handleSubjectChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
                   required
                 >
                   <option value="">Select a subject...</option>
@@ -163,7 +163,7 @@ ${message}`)}`;
                   rows="5"
                   value={message}
                   onChange={handleMessageChange}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
                   required
                 ></textarea>
               </div>
