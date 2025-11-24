@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const FeaturedProjects = () => {
+  const { ref: projectsRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   const projects = [
     {
       id: 1,
@@ -45,17 +48,6 @@ const FeaturedProjects = () => {
       liveDemo: "https://ftlradio.netlify.app/",
       codeLink: "https://github.com/nashftl/ftl-radio-homepage.git",
     },
-    // {
-    //   id: 5,
-    //   image: "/images/projects/5.testimonials.png",
-    //   category: "Small Business",
-    //   title: "LocalCraft Marketplace",
-    //   description:
-    //     "E-commerce platform connecting local artisans with customers, featuring inventory management and analytics.",
-    //   techTags: ["Shopify", "React", "GraphQL", "Klaviyo"],
-    //   liveDemo: "https://localcraft-marketplace.netlify.app",
-    //   codeLink: "https://github.com/yourusername/localcraft-marketplace",
-    // },
     {
       id: 6,
       image: "/images/projects/6.web-services.png",
@@ -69,7 +61,7 @@ const FeaturedProjects = () => {
     },
     {
       id: 7,
-      image: "/src/assets/images/project-7.png", // Placeholder
+      image: "/src/assets/images/project-7.png",
       category: "Utility",
       title: "Tarot Card Demo",
       description:
@@ -97,7 +89,7 @@ const FeaturedProjects = () => {
 
   return (
     <section id="portfolio" className="bg-black text-white py-20">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4">
         <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
         <p className="text-lg text-gray-300 mb-12">
           A showcase of successful projects across different industries and use
@@ -105,52 +97,52 @@ const FeaturedProjects = () => {
         </p>
 
         {/* Filter Buttons */}
-        <div className="flex justify-center space-x-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
-            className={`px-4 py-2 rounded-full ${
+            className={`px-4 py-2 rounded-full transition-all duration-300 ${
               activeFilter === "All"
-                ? "bg-gray-700 text-white"
-                : "bg-gray-800 text-gray-400"
+                ? "bg-gray-700 text-white scale-105"
+                : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
             }`}
             onClick={() => handleFilterClick("All")}
           >
             All
           </button>
           <button
-            className={`px-4 py-2 rounded-full ${
+            className={`px-4 py-2 rounded-full transition-all duration-300 ${
               activeFilter === "Music"
-                ? "bg-gray-700 text-white"
-                : "bg-gray-800 text-gray-400"
+                ? "bg-gray-700 text-white scale-105"
+                : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
             }`}
             onClick={() => handleFilterClick("Music")}
           >
             Music
           </button>
           <button
-            className={`px-4 py-2 rounded-full ${
+            className={`px-4 py-2 rounded-full transition-all duration-300 ${
               activeFilter === "Utility"
-                ? "bg-gray-700 text-white"
-                : "bg-gray-800 text-gray-400"
+                ? "bg-gray-700 text-white scale-105"
+                : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
             }`}
             onClick={() => handleFilterClick("Utility")}
           >
             Utility
           </button>
           <button
-            className={`px-4 py-2 rounded-full ${
+            className={`px-4 py-2 rounded-full transition-all duration-300 ${
               activeFilter === "Web Design"
-                ? "bg-gray-700 text-white"
-                : "bg-gray-800 text-gray-400"
+                ? "bg-gray-700 text-white scale-105"
+                : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
             }`}
             onClick={() => handleFilterClick("Web Design")}
           >
             Web Design
           </button>
           <button
-            className={`px-4 py-2 rounded-full ${
+            className={`px-4 py-2 rounded-full transition-all duration-300 ${
               activeFilter === "Small Business"
-                ? "bg-gray-700 text-white"
-                : "bg-gray-800 text-gray-400"
+                ? "bg-gray-700 text-white scale-105"
+                : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
             }`}
             onClick={() => handleFilterClick("Small Business")}
           >
@@ -159,18 +151,27 @@ const FeaturedProjects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          ref={projectsRef}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800"
+              className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-2xl hover:scale-105 hover:-translate-y-2"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-                loading="lazy"
-              />
+              <div className="overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 hover:scale-110"
+                  loading="lazy"
+                  width="400"
+                  height="192"
+                />
+              </div>
               <div className="p-6 text-left">
                 <span className="text-sm text-gray-400 mb-2 block">
                   {project.category}
@@ -194,7 +195,7 @@ const FeaturedProjects = () => {
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white text-black px-4 py-2 rounded-md text-sm font-semibold flex items-center"
+                    className="bg-white text-black px-4 py-2 rounded-md text-sm font-semibold flex items-center transition-all duration-300 hover:bg-gray-200 hover:scale-105 active:scale-95"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +217,7 @@ const FeaturedProjects = () => {
                     href={project.codeLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-white text-white px-4 py-2 rounded-md text-sm font-semibold flex items-center"
+                    className="border border-white text-white px-4 py-2 rounded-md text-sm font-semibold flex items-center transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -245,3 +246,4 @@ const FeaturedProjects = () => {
 };
 
 export default FeaturedProjects;
+

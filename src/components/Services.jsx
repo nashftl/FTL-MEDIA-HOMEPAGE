@@ -1,9 +1,12 @@
 import React from "react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Services = () => {
+  const { ref: servicesRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section id="services" className="bg-black text-white py-20">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4">
         <h2 className="text-4xl font-bold mb-4">Services That Drive Results</h2>
         <p className="text-lg text-gray-300 mb-12">
           Specialized web solutions across four key areas, each designed to meet
@@ -11,9 +14,14 @@ const Services = () => {
         </p>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div 
+          ref={servicesRef}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {/* Music Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800">
+          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/music.svg" alt="Music Icon" className="h-10 w-10" />
             </div>
@@ -31,7 +39,7 @@ const Services = () => {
           </div>
 
           {/* Utility Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800">
+          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/utility.svg" alt="Utility Icon" className="h-10 w-10" />
             </div>
@@ -49,7 +57,7 @@ const Services = () => {
           </div>
 
           {/* Web Design Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800">
+          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/web_design.svg" alt="Web Design Icon" className="h-10 w-10" />
             </div>
@@ -67,7 +75,7 @@ const Services = () => {
           </div>
 
           {/* Small Business Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800">
+          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
               <img src="/src/assets/images/services/small_business.svg" alt="Small Business Icon" className="h-10 w-10" />
             </div>
@@ -90,3 +98,4 @@ const Services = () => {
 };
 
 export default Services;
+

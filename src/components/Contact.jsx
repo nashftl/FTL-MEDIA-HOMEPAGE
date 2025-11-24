@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Contact = () => {
+  const { ref: contactRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -32,17 +35,22 @@ ${message}`)}`;
 
   return (
     <section id="contact" className="bg-black text-white py-20">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4">
         <h2 className="text-4xl font-bold mb-4">Let's Work Together</h2>
         <p className="text-lg text-gray-300 mb-12">
           Ready to bring your ideas to life? Get in touch and let's discuss your
           project.
         </p>
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div 
+          ref={contactRef}
+          className={`flex flex-col lg:flex-row gap-8 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {/* Contact Details */}
           <div className="lg:w-1/3 space-y-8 text-left">
-            <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
+            <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl">
               <h3 className="text-xl font-semibold mb-2 text-white">Email</h3>
               <p className="text-gray-400">Drop me a line anytime</p>
               <a
@@ -169,7 +177,7 @@ ${message}`)}`;
               </div>
               <a
                 href={mailtoLink}
-                className="bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition duration-300 text-center"
+                className="bg-white text-black px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-gray-200 hover:scale-105 active:scale-95 inline-block text-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >

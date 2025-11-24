@@ -1,15 +1,23 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const TechnicalExpertise = () => {
+  const { ref: skillsRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section id="skills" className="bg-black text-white py-20">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4">
         <h2 className="text-4xl font-bold mb-4">Technical Expertise</h2>
         <p className="text-lg text-gray-300 mb-12">A comprehensive toolkit for building modern web applications across all domains.</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div 
+          ref={skillsRef}
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {/* Frontend Card */}
-          <div className="bg-black p-6 rounded-xl border border-gray-800">
+          <div className="bg-black p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105">
             <h3 className="text-2xl font-semibold mb-4 text-white">Frontend</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">React</span>
@@ -23,7 +31,7 @@ const TechnicalExpertise = () => {
           </div>
 
           {/* Backend Card */}
-          <div className="bg-black p-6 rounded-xl border border-gray-800">
+          <div className="bg-black p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105">
             <h3 className="text-2xl font-semibold mb-4 text-white">Backend</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Node.js</span>
@@ -37,7 +45,7 @@ const TechnicalExpertise = () => {
           </div>
 
           {/* Music Tech Card */}
-          <div className="bg-black p-6 rounded-xl border border-gray-800">
+          <div className="bg-black p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105">
             <h3 className="text-2xl font-semibold mb-4 text-white">Music Tech</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Web Audio API</span>
@@ -50,7 +58,7 @@ const TechnicalExpertise = () => {
           </div>
 
           {/* Tools & Platform Card */}
-          <div className="bg-black p-6 rounded-xl border border-gray-800">
+          <div className="bg-black p-6 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105">
             <h3 className="text-2xl font-semibold mb-4 text-white">Tools & Platform</h3>
             <div className="flex flex-wrap gap-2">
               <span className="bg-gray-800 text-gray-500 px-3 py-1 rounded-full text-sm">Git</span>
