@@ -1,5 +1,6 @@
 import React from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import heroImage from "../assets/images/hero-image.jpg";
 
 const Hero = () => {
   const { ref: heroRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
@@ -60,7 +61,7 @@ const Hero = () => {
         {/* Hero Image */}
         <div className="md:w-1/2 mt-10 md:mt-0 px-4">
           <img
-            src="/src/assets/images/hero-image.jpg"
+            src={heroImage}
             alt="Web Services Portfolio Showcase"
             className="w-full h-auto rounded-lg shadow-2xl transition-transform duration-500 hover:scale-105"
             width="600"
