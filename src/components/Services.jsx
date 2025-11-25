@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Music, Wrench, Palette, Briefcase } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Services = () => {
   const { ref: servicesRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
+  const navigate = useNavigate();
 
   return (
     <section id="services" className="bg-white dark:bg-black text-black dark:text-white py-20">
@@ -97,12 +98,12 @@ const Services = () => {
 
         {/* See All Services Button */}
         <div className="text-center mt-12">
-          <Link 
-            to="/services"
-            className="inline-block bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 hover:shadow-xl active:scale-95"
+          <button 
+            onClick={() => navigate('/services')}
+            className="bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 hover:shadow-xl active:scale-95"
           >
             See All Services
-          </Link>
+          </button>
         </div>
       </div>
     </section>
