@@ -16,15 +16,15 @@ const Hero = () => {
         {/* Hero Content (Text and Buttons) */}
         <div className="md:w-1/2 text-center md:text-left px-4">
           <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">
-            Available for new projects
+            Official Partner of FTL Radio
           </p>
           <h1 className="text-5xl font-bold mb-4">
-            Professional Web Services for Every Need
+            Marketing & Web Services for the Music Industry
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-            From music production tools to business websites, I create digital
-            solutions that elevate your brand and streamline your workflow with
-            cutting-edge technology.
+            FTL Media delivers cutting-edge marketing and web development solutions 
+            tailored for artists, labels, and creative businesses. From music production 
+            tools to e-commerce platforms, we bring your vision to life.
           </p>
           {/* Call to Action Buttons */}
           <div className="flex justify-center md:justify-start space-x-4">
@@ -46,11 +46,11 @@ const Hero = () => {
             <h2 className="sr-only">Key Statistics</h2>
             <div className="transition-transform duration-300 hover:scale-110">
               <p className="text-3xl font-bold">50+</p>
-              <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
+              <p className="text-gray-600 dark:text-gray-400">Projects Delivered</p>
             </div>
             <div className="transition-transform duration-300 hover:scale-110">
-              <p className="text-3xl font-bold">4</p>
-              <p className="text-gray-600 dark:text-gray-400">Service Categories</p>
+              <p className="text-3xl font-bold">FTL Radio</p>
+              <p className="text-gray-600 dark:text-gray-400">Official Partner</p>
             </div>
             <div className="transition-transform duration-300 hover:scale-110">
               <p className="text-3xl font-bold">100%</p>

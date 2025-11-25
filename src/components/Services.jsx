@@ -9,10 +9,10 @@ const Services = () => {
   return (
     <section id="services" className="bg-white dark:bg-black text-black dark:text-white py-20">
       <div className="container mx-auto text-center px-4">
-        <h2 className="text-4xl font-bold mb-4">Services That Drive Results</h2>
+        <h2 className="text-4xl font-bold mb-4">Our Services</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-12">
-          Specialized web solutions across four key areas, each designed to meet
-          unique industry needs.
+          Comprehensive marketing and web solutions designed for the music industry 
+          and creative businesses.
         </p>
 
         {/* Services Grid */}
