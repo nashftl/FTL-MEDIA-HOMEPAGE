@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Music, Wrench, Palette, Briefcase } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Services = () => {
@@ -21,16 +23,16 @@ const Services = () => {
           }`}
         >
           {/* Music Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+          <div className="bg-gray-50 dark:bg-black p-8 rounded-xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-gray-400 dark:hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
-              <img src="/src/assets/images/services/music.svg" alt="Music Icon" className="h-10 w-10" />
+              <Music className="h-12 w-12 text-blue-500" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-white">Music</h3>
-            <p className="text-gray-400 mb-4">
+            <h3 className="text-2xl font-bold mb-2">Music</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               Audio production tools, streaming platforms, and music management
               systems tailored for artists and producers.
             </p>
-            <ul className="text-left text-gray-500 space-y-2">
+            <ul className="text-left text-gray-600 dark:text-gray-500 space-y-2">
               <li>• Audio Processing</li>
               <li>• Streaming Integration</li>
               <li>• Music Analytics</li>
@@ -39,16 +41,16 @@ const Services = () => {
           </div>
 
           {/* Utility Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+          <div className="bg-gray-50 dark:bg-black p-8 rounded-xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-gray-400 dark:hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
-              <img src="/src/assets/images/services/utility.svg" alt="Utility Icon" className="h-10 w-10" />
+              <Wrench className="h-12 w-12 text-green-500" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-white">Utility</h3>
-            <p className="text-gray-400 mb-4">
+            <h3 className="text-2xl font-bold mb-2">Utility</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               Practical web applications and tools that solve everyday problems
               and improve productivity.
             </p>
-            <ul className="text-left text-gray-500 space-y-2">
+            <ul className="text-left text-gray-600 dark:text-gray-500 space-y-2">
               <li>• Automation Tools</li>
               <li>• Data Processing</li>
               <li>• API Integration</li>
@@ -57,12 +59,12 @@ const Services = () => {
           </div>
 
           {/* Web Design Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+          <div className="bg-gray-50 dark:bg-black p-8 rounded-xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-gray-400 dark:hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
-              <img src="/src/assets/images/services/web_design.svg" alt="Web Design Icon" className="h-10 w-10" />
+              <Palette className="h-12 w-12 text-purple-500" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-white">Web Design</h3>
-            <p className="text-gray-400 mb-4">
+            <h3 className="text-2xl font-bold mb-2">Web Design</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               Beautiful, responsive websites that capture your brand essence and
               engage your audience.
             </p>
@@ -75,12 +77,12 @@ const Services = () => {
           </div>
 
           {/* Small Business Services Card */}
-          <div className="bg-black p-8 rounded-xl border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
+          <div className="bg-gray-50 dark:bg-black p-8 rounded-xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:border-gray-400 dark:hover:border-gray-600 hover:shadow-xl hover:scale-105 hover:-translate-y-2">
             <div className="flex justify-center mb-4">
-              <img src="/src/assets/images/services/small_business.svg" alt="Small Business Icon" className="h-10 w-10" />
+              <Briefcase className="h-12 w-12 text-orange-500" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-white">Small Business</h3>
-            <p className="text-gray-400 mb-4">
+            <h3 className="text-2xl font-bold mb-2">Small Business</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               Complete digital solutions for small businesses, from e-commerce
               to customer management.
             </p>
@@ -91,6 +93,16 @@ const Services = () => {
               <li>• Business Analytics</li>
             </ul>
           </div>
+        </div>
+
+        {/* See All Services Button */}
+        <div className="text-center mt-12">
+          <Link 
+            to="/services"
+            className="inline-block bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 hover:shadow-xl active:scale-95"
+          >
+            See All Services
+          </Link>
         </div>
       </div>
     </section>
