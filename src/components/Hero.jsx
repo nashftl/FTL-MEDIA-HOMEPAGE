@@ -5,7 +5,7 @@ const Hero = () => {
   const { ref: heroRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section id="home" className="bg-white dark:bg-black text-black dark:text-white py-20">
+    <section id="home" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-white py-20">
       <div 
         ref={heroRef}
         className={`container mx-auto flex flex-col md:flex-row items-center transition-all duration-1000 ${

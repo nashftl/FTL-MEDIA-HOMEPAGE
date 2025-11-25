@@ -5,7 +5,7 @@ const TechnicalExpertise = () => {
   const { ref: skillsRef, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section id="skills" className="bg-gray-50 dark:bg-black text-black dark:text-white py-20">
+    <section id="skills" className="bg-gray-50 dark:bg-gray-900 text-black dark:text-white py-20">
       <div className="container mx-auto text-center px-4">
         <h2 className="text-4xl font-bold mb-4">Technical Expertise</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-12">A comprehensive toolkit for building modern web applications across all domains.</p>
