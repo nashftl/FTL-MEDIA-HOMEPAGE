@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -22,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-black text-white border-b border-gray-900">
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-black dark:bg-black text-white border-b border-gray-900 dark:border-gray-900">
       {/* Logo and Website Name */}
       <Link to="/" className="flex items-center" aria-label="Website Logo and Name">
         <img src="/src/assets/icons/logo.svg" alt="WS" className="h-8 w-8 mr-2" />
@@ -50,10 +52,20 @@ const Header = () => {
       </nav>
       {/* Utility Navigation (Theme Toggle and Get Started Button) */}
       <div className="flex items-center space-x-4" aria-label="Utility Navigation">
-        <button className="hidden md:block transition-all duration-200 hover:text-gray-400 hover:rotate-45">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-          </svg>
+        <button 
+          onClick={toggleTheme}
+          className="hidden md:block transition-all duration-200 hover:text-gray-400 hover:rotate-45"
+          aria-label="Toggle theme"
+        >
+          {theme === 'dark' ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          )}
         </button>
         {isHomePage ? (
           <button 

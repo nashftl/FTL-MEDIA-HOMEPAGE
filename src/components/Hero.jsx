@@ -5,7 +5,7 @@ const Hero = () => {
   const { ref: heroRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section id="home" className="bg-black text-white py-20">
+    <section id="home" className="bg-white dark:bg-black text-black dark:text-white py-20">
       <div 
         ref={heroRef}
         className={`container mx-auto flex flex-col md:flex-row items-center transition-all duration-1000 ${
@@ -14,13 +14,13 @@ const Hero = () => {
       >
         {/* Hero Content (Text and Buttons) */}
         <div className="md:w-1/2 text-center md:text-left px-4">
-          <p className="text-sm font-semibold text-gray-400 mb-2">
+          <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">
             Available for new projects
           </p>
           <h1 className="text-5xl font-bold mb-4">
             Professional Web Services for Every Need
           </h1>
-          <p className="text-lg text-gray-300 mb-8">
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
             From music production tools to business websites, I create digital
             solutions that elevate your brand and streamline your workflow with
             cutting-edge technology.
@@ -29,13 +29,13 @@ const Hero = () => {
           <div className="flex justify-center md:justify-start space-x-4">
             <a 
               href="#portfolio"
-              className="bg-white text-black px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-gray-200 hover:scale-105 hover:shadow-lg active:scale-95"
+              className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 hover:shadow-lg active:scale-95"
             >
               View My Work
             </a>
             <a 
               href="#services"
-              className="border border-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95"
+              className="border border-black dark:border-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-105 active:scale-95"
             >
               Explore Services
             </a>
@@ -45,15 +45,15 @@ const Hero = () => {
             <h2 className="sr-only">Key Statistics</h2>
             <div className="transition-transform duration-300 hover:scale-110">
               <p className="text-3xl font-bold">50+</p>
-              <p className="text-gray-400">Projects Completed</p>
+              <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
             </div>
             <div className="transition-transform duration-300 hover:scale-110">
               <p className="text-3xl font-bold">4</p>
-              <p className="text-gray-400">Service Categories</p>
+              <p className="text-gray-600 dark:text-gray-400">Service Categories</p>
             </div>
             <div className="transition-transform duration-300 hover:scale-110">
               <p className="text-3xl font-bold">100%</p>
-              <p className="text-gray-400">Client Satisfaction</p>
+              <p className="text-gray-600 dark:text-gray-400">Client Satisfaction</p>
             </div>
           </div>
         </div>
