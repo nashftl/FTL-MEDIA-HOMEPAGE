@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FTL Media Agency - Social Media Management</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Social Media</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <!-- ADDED THIS LINK to the new page -->
+          <li><a href="design-services.html">Web & Logo Design</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Section 1: Hero / Cover Page -->
+    <section id="hero" class="section full-height centered">
+      <div class="logo-container">
+        <!-- Make sure 'ftl-media-logo.png' exists in 'img-src' folder -->
+        <img
+          src="img-src/ftl-media-logo.png"
+          alt="FTL Media Agency Logo"
+          class="main-logo"
+        />
+      </div>
+      <h2>Elevating Brands Through Social Media Excellence</h2>
+      <h1>SOCIAL MEDIA<br />MANAGEMENT<br /></h1>
+      <!-- Added call to action -->
+      <button
+        onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
+        class="cta-button"
+      >
+        Get Started Below
+      </button>
+    </section>
+
+    <!-- Section 2: About Us -->
+    <section id="about" class="section">
+      <div class="accent-block accent-block-left"></div>
+      <!-- Make sure 'about-us-image.jpg' exists in 'img-src' folder -->
+      <img
+        src="img-src/about-us-image.jpg"
+        alt="FTL Media team collaborating in a modern workspace"
+        class="section-image"
+      />
+      <div class="content-container">
+        <h2>ABOUT US</h2>
+        <p>
+          At FTL Media Agency, we help brands create meaningful, engaging, and
+          consistent social media content that connects with their audience and
+          grows their online presence organically. Our mission is to support
+          businesses in building authentic communities through strategic,
+          results-driven social media management.
+        </p>
+        <p>
+          We specialize in content creation, audience engagement, and community
+          management, offering affordable packages tailored to businesses of all
+          sizes.
+        </p>
+      </div>
+      <div class="accent-block accent-block-bottom-right-small"></div>
+    </section>
+
+    <!-- Section 3: Services -->
+    <section id="services" class="section">
+      <div class="accent-block accent-block-top-left"></div>
+      <div class="content-container">
+        <h2>WHAT WE DO &<br />HOW WE CAN HELP YOU</h2>
+        <p>
+          We offer comprehensive social media management designed to save you
+          time while growing your brand online. Our services include:
+        </p>
+        <ul>
+          <li><i class="fas fa-lightbulb"></i> Content Strategy</li>
+          <li><i class="far fa-calendar-alt"></i> Content Plan</li>
+          <li><i class="fas fa-palette"></i> Custom-designed Canva posts</li>
+          <li>
+            <i class="far fa-comment-dots"></i> Engaging Captions tailored to
+            your brand's voice
+          </li>
+          <li>
+            <i class="far fa-images"></i> Instagram stories & interactive story
+            templates
+          </li>
+          <li><i class="fas fa-users"></i> Community management</li>
+          <li>
+            <i class="fas fa-chart-line"></i> Audience & follower engagement
+          </li>
+          <li><i class="fas fa-file-alt"></i> Monthly analytics report</li>
+        </ul>
+      </div>
+      <!-- Make sure 'services-image.jpg' exists in 'img-src' folder -->
+      <img
+        src="img-src/services-image.jpg"
+        alt="Laptop displaying social media analytics dashboard"
+        class="section-image"
+      />
+      <div class="accent-block accent-block-right"></div>
+    </section>
+
+    <!-- Section 4: Packages -->
+    <section id="packages" class="section">
+      <div class="accent-block accent-block-top-right"></div>
+      <div class="content-container">
+        <h2>OUR PACKAGES</h2>
+
+        <div class="package-intro">
+          <p>
+            All packages require a one-time, non-refundable admin fee of
+            <strong>R525</strong>.
+          </p>
+          <p>
+            <em
+              >Custom packages are available - Let us know your needs in the
+              contact form below!</em
+            >
+          </p>
+        </div>
+
+        <!-- Startup Package Card -->
+        <div class="startup-package-card">
+          <h3>STARTUP LAUNCH PACKAGE</h3>
+          <p class="price">R1000 (Once-off, First Month)</p>
+          <p>
+            Perfect for getting started! Includes complete social media page
+            setup and configuration on your chosen platforms.
+          </p>
+        </div>
+
+        <!-- Main Package Grid -->
+        <div class="package-grid">
+          <div class="package-card">
+            <h3>BASIC PACKAGE</h3>
+            <p class="price">R3000 / month</p>
+            <ul>
+              <li>12x posts per month (incl. 8 statics & 4 reels)</li>
+              <li>12x stories per month</li>
+              <li>Daily engagement (30 accounts)</li>
+              <li>Community Management</li>
+              <li>Customized Social Media Strategy</li>
+              <li>Monthly Analytics Report</li>
+            </ul>
+          </div>
+
+          <!-- Highlighted Standard Package -->
+          <div class="package-card highlighted-package">
+            <span class="highlight-banner">Most Popular</span>
+            <h3>ADVANCED PACKAGE</h3>
+            <p class="price">R4500 / month</p>
+            <ul>
+              <li>20x posts per month (incl. 12 statics & 8 reels)</li>
+              <li>20x stories per month</li>
+              <li>Daily engagement (50 accounts)</li>
+              <li>Community Management</li>
+              <li>Customized Social Media Strategy</li>
+              <li>Monthly Analytics Report</li>
+            </ul>
+          </div>
+
+          <div class="package-card">
+            <h3>PREMIUM PACKAGE</h3>
+            <p class="price">R6500 / month</p>
+            <ul>
+              <li>28x posts per month (incl. 16 statics & 12 reels)</li>
+              <li>28 stories per month</li>
+              <li>Daily engagement (70 accounts)</li>
+              <li>Community Management</li>
+              <li>Customized Social Media Strategy</li>
+              <li>Monthly Analytics Report</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accent-block accent-block-bottom-left-large"></div>
+    </section>
+
+    <!-- Section 5: Why Choose Us & Next Step -->
+    <section id="why-next" class="section">
+      <div class="content-container">
+        <h2>WHY CHOOSE US?</h2>
+        <ul>
+          <li>
+            We offer tailored social media strategies designed for your business
+            goals
+          </li>
+          <li>Affordable and flexible monthly packages</li>
+          <li>A dedicated account manager for personalized service</li>
+          <li>
+            Proven track record of increasing engagement and brand awareness
+          </li>
+          <li>Fast onboarding and smooth communication</li>
+        </ul>
+
+        <h2 class="next-step-heading">READY TO ELEVATE YOUR SOCIAL MEDIA?</h2>
+        <p>
+          Let's connect! Fill out the form below to tell us a bit about your
+          needs or schedule a free consultation. We'll discuss your goals and
+          recommend the perfect social media management package and strategy for
+          you.
+        </p>
+        <button
+          onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
+          class="cta-button"
+        >
+          Get Started Below
+        </button>
+      </div>
+      <!-- Make sure 'why-us-image.jpg' exists in 'img-src' folder -->
+      <img
+        src="img-src/why-us-image.jpg"
+        alt="Two professionals shaking hands over a successful agreement"
+        class="section-image"
+      />
+      <div class="accent-block accent-block-bottom-right-small"></div>
+    </section>
+
+    <!-- Section 6: Contact Form / Footer -->
+    <footer id="contact" class="section">
+      <div class="accent-block accent-block-top-left"></div>
+      <div class="content-container">
+        <h2>CONTACT US</h2>
+        <p>Fill out the form below or reach us directly:</p>
+        <div class="direct-contact-info">
+          <p>
+            <span class="icon">📧</span>
+            <a href="mailto:info@ftlmediaagency.co.za"
+              >info@ftlmediaagency.co.za</a
+            >
+          </p>
+          <p>
+            <span class="icon">📞</span>
+            <a href="tel:+27614567890">+27 61 456 7890</a>
+          </p>
+        </div>
+
+        <!-- Contact Form using mailto: -->
+        <form
+          id="contact-form"
+          action="mailto:info@ftlmediaagency.com"
+          method="POST"
+          enctype="text/plain"
+        >
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone (Optional):</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="package-interest">Package Interest:</label>
+            <select id="package-interest" name="package_interest">
+              <option value="Unsure">Select a Package (or Unsure)</option>
+              <option value="Startup">Startup Launch Package</option>
+              <option value="Basic">Basic Package</option>
+              <option value="Standard">Standard Package</option>
+              <option value="Premium">Premium Package</option>
+              <option value="Custom">Custom Requirements</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">Tell us about your business/needs:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="submit-button">Send Inquiry</button>
+          </div>
+          <p class="form-note">
+            Note: Clicking "Send Inquiry" will open your default email client to
+            send the details.
+          </p>
+        </form>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

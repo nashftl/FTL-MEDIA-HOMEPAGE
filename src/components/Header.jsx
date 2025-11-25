@@ -1,27 +1,52 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const isHomePage = location.pathname === '/';
+
+  const scrollToSection = (sectionId) => {
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-black text-white border-b border-gray-900">
       {/* Logo and Website Name */}
-      <div className="flex items-center" aria-label="Website Logo and Name">
+      <Link to="/" className="flex items-center" aria-label="Website Logo and Name">
         <img src="/src/assets/icons/logo.svg" alt="WS" className="h-8 w-8 mr-2" />
         <span className="text-xl font-bold">Web Services</span>
-      </div>
+      </Link>
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center space-x-4">
-        <a href="#home" className="transition-colors duration-200 hover:text-gray-400">Home</a>
-        <a href="#services" className="transition-colors duration-200 hover:text-gray-400">Services</a>
-        <a href="#skills" className="transition-colors duration-200 hover:text-gray-400">Skills</a>
-        <a href="#portfolio" className="transition-colors duration-200 hover:text-gray-400">Portfolio</a>
-        <a href="#testimonials" className="transition-colors duration-200 hover:text-gray-400">Testimonials</a>
-        <a href="#contact" className="transition-colors duration-200 hover:text-gray-400">Contact</a>
+        <Link to="/" className="transition-colors duration-200 hover:text-gray-400">Home</Link>
+        <Link to="/services" className="transition-colors duration-200 hover:text-gray-400">Services</Link>
+        {isHomePage ? (
+          <>
+            <button onClick={() => scrollToSection('skills')} className="transition-colors duration-200 hover:text-gray-400">Skills</button>
+            <button onClick={() => scrollToSection('portfolio')} className="transition-colors duration-200 hover:text-gray-400">Portfolio</button>
+            <button onClick={() => scrollToSection('testimonials')} className="transition-colors duration-200 hover:text-gray-400">Testimonials</button>
+            <button onClick={() => scrollToSection('contact')} className="transition-colors duration-200 hover:text-gray-400">Contact</button>
+          </>
+        ) : (
+          <>
+            <Link to="/#skills" className="transition-colors duration-200 hover:text-gray-400">Skills</Link>
+            <Link to="/#portfolio" className="transition-colors duration-200 hover:text-gray-400">Portfolio</Link>
+            <Link to="/#testimonials" className="transition-colors duration-200 hover:text-gray-400">Testimonials</Link>
+            <Link to="/#contact" className="transition-colors duration-200 hover:text-gray-400">Contact</Link>
+          </>
+        )}
       </nav>
       {/* Utility Navigation (Theme Toggle and Get Started Button) */}
       <div className="flex items-center space-x-4" aria-label="Utility Navigation">
@@ -30,12 +55,21 @@ const Header = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
         </button>
-        <a 
-          href="#contact"
-          className="bg-white text-black px-4 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-gray-200 hover:scale-105 active:scale-95"
-        >
-          Get Started
-        </a>
+        {isHomePage ? (
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="bg-white text-black px-4 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-gray-200 hover:scale-105 active:scale-95"
+          >
+            Get Started
+          </button>
+        ) : (
+          <Link 
+            to="/#contact"
+            className="bg-white text-black px-4 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-gray-200 hover:scale-105 active:scale-95"
+          >
+            Get Started
+          </Link>
+        )}
         {/* Hamburger Menu Button */}
         <button className="md:hidden text-white focus:outline-none transition-transform duration-200 hover:scale-110" onClick={toggleMenu}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,12 +85,12 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-black bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 animate-fadeIn">
-          <a href="#home" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Home</a>
-          <a href="#services" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Services</a>
-          <a href="#skills" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Skills</a>
-          <a href="#portfolio" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Portfolio</a>
-          <a href="#testimonials" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Testimonials</a>
-          <a href="#contact" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Contact</a>
+          <Link to="/" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Home</Link>
+          <Link to="/services" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Services</Link>
+          <Link to="/#skills" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Skills</Link>
+          <Link to="/#portfolio" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Portfolio</Link>
+          <Link to="/#testimonials" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Testimonials</Link>
+          <Link to="/#contact" className="text-white text-2xl transition-all duration-200 hover:text-gray-400 hover:scale-110" onClick={toggleMenu}>Contact</Link>
           <button className="bg-white text-black px-6 py-3 rounded-md text-xl font-semibold transition-all duration-300 hover:bg-gray-200 hover:scale-105" onClick={toggleMenu}>Get Started</button>
         </div>
       )}

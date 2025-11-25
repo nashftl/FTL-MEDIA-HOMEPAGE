@@ -128,7 +128,7 @@ ${message}`)}`;
                   htmlFor="subject"
                   className="block text-gray-400 text-sm font-bold mb-2"
                 >
-                  Subject
+                  I'm interested in
                 </label>
                 <select
                   id="subject"
@@ -138,24 +138,34 @@ ${message}`)}`;
                   className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-800 border-gray-700 text-white"
                   required
                 >
-                  <option value="">Select a subject...</option>
-                  <option value="General Inquiry">General Inquiry</option>
-                  <option value="Project Proposal (Music)">
-                    Project Proposal (Music)
-                  </option>
-                  <option value="Project Proposal (Utility)">
-                    Project Proposal (Utility)
-                  </option>
-                  <option value="Project Proposal (Web Design)">
-                    Project Proposal (Web Design)
-                  </option>
-                  <option value="Project Proposal (Small Business)">
-                    Project Proposal (Small Business)
-                  </option>
-                  <option value="Partnership Opportunity">
-                    Partnership Opportunity
-                  </option>
-                  <option value="Support Request">Support Request</option>
+                  <option value="">Select a service or package...</option>
+                  
+                  <optgroup label="Web & Logo Design Packages">
+                    <option value="Essential LaunchPad Package">Essential LaunchPad (from R1,499)</option>
+                    <option value="Professional Brand Builder Package">Professional Brand Builder (R6,500)</option>
+                    <option value="Strategic Growth Partner Package">Strategic Growth Partner (from R8,500)</option>
+                  </optgroup>
+                  
+                  <optgroup label="Individual Design Services">
+                    <option value="Logo Design - Simple">Logo Design - Simple</option>
+                    <option value="Logo Design - Full CI">Logo Design - Full CI (Brand Identity)</option>
+                    <option value="1-Page Website">1-Page Website</option>
+                    <option value="3-5 Page Website">3-5 Page Website</option>
+                    <option value="Website Maintenance">Website Maintenance</option>
+                  </optgroup>
+                  
+                  <optgroup label="Social Media Management">
+                    <option value="Startup Launch Package">Startup Launch Package (R1,000)</option>
+                    <option value="Basic Social Media Package">Basic Package (R3,000/mo)</option>
+                    <option value="Advanced Social Media Package">Advanced Package (R4,500/mo)</option>
+                    <option value="Premium Social Media Package">Premium Package (R6,500/mo)</option>
+                  </optgroup>
+                  
+                  <optgroup label="Other">
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Custom Project">Custom Project</option>
+                    <option value="Partnership Opportunity">Partnership Opportunity</option>
+                  </optgroup>
                 </select>
               </div>
               <div>
