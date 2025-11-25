@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../assets/icons/logo.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
@@ -27,7 +28,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-white dark:bg-black text-black dark:text-white border-b border-gray-200 dark:border-gray-900 backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95">
       {/* Logo and Website Name */}
       <Link to="/" className="flex items-center" aria-label="FTL Media Logo">
-        <img src="/src/assets/icons/logo.svg" alt="FTL Media" className="h-8 w-8 mr-2" />
+        <img src={logo} alt="FTL Media" className="h-8 w-8 mr-2 dark:invert" />
         <span className="text-xl font-bold">FTL Media</span>
       </Link>
       {/* Desktop Navigation */}
