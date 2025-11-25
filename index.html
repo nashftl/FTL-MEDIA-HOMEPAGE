@@ -18,11 +18,13 @@
     <meta property="og:url" content="https://yourwebsite.com" />
     
     <!-- Performance Optimization -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#000000" />
+    <!-- Theme Color for both light and dark modes -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   </head>
   <body>
     <div id="root"></div>
