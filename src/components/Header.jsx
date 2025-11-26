@@ -83,6 +83,13 @@ const Header = () => {
             Get Started
           </Link>
         )}
+        {/* Radio Button */}
+        <Link 
+          to="/ftl-radio"
+          className="hidden md:block border border-black dark:border-white px-4 py-2 rounded-md font-semibold transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-105 active:scale-95"
+        >
+          FTL RADIO 
+        </Link>
         {/* Hamburger Menu Button */}
         <button className="md:hidden text-white focus:outline-none transition-transform duration-200 hover:scale-110" onClick={toggleMenu}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

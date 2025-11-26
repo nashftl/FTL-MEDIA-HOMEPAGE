@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 
 // Lazy load the Services page for better performance
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const FTLRadioPage = lazy(() => import('./pages/FTLRadioPage'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/ftl-radio" element={<FTLRadioPage />} />
         </Routes>
       </Suspense>
       <Footer />
