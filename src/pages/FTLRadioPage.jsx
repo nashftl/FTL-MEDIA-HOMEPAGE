@@ -15,11 +15,11 @@ const FTLRadioPage = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen pt-24 pb-20">
+    <div className="fixed inset-0 z-50 bg-black text-white overflow-y-auto animate-fadeIn">
       {/* Close Button */}
       <button
         onClick={handleClose}
-        className="fixed top-24 right-4 z-50 bg-gray-900 hover:bg-gray-800 text-white p-2 rounded-full border border-gray-700 transition-all duration-300 hover:scale-110"
+        className="fixed top-6 right-6 z-50 bg-gray-900 hover:bg-gray-800 text-white p-2 rounded-full border border-gray-700 transition-all duration-300 hover:scale-110"
         aria-label="Close FTL Radio Page"
       >
         <X className="h-6 w-6" />
