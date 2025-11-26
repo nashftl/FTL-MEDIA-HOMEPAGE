@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FTL Radio - Homepage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+     <!-- === NEW: Loading Screen === -->
+     <div id="loading-screen">
+        <div class="loading-content">
+            <h1 class="loading-title">FTL RADIO</h1>
+            <p class="loading-prompt">
+                <span class="blink-indicator">></span> PRESS START
+            </p>
+        </div>
+         <p class="loading-copyright">
+             © <span id="copyright-year"></span> FTL MEDIA
+         </p>
+    </div>
+    <!-- === End Loading Screen === -->
+
+
+       <!-- Main canvas area -->
+       <div class="canvas">
+
+        <!-- === TRIGGER ITEMS ONLY === -->
+        <div class="visual-item trigger" id="trigger-booking"> <img src="images/trigger-booking.png" alt="Studio Booking Trigger"> <span class="trigger-label">BOOKING</span> </div>
+        <div class="visual-item trigger" id="trigger-beats"> <img src="images/trigger-beats.png" alt="Beat Store Trigger"> <span class="trigger-label">BEATS</span> </div>
+        <div class="visual-item trigger" id="trigger-mixmaster"> <img src="images/trigger-services-mixmaster.png" alt="Mixing & Mastering Trigger"> <span class="trigger-label">MIX/MASTER</span> </div>
+        <div class="visual-item trigger" id="trigger-postprod"> <img src="images/trigger-services-postprod.png" alt="Post Production Trigger"> <span class="trigger-label">POST PROD</span> </div>
+        <div class="visual-item trigger" id="trigger-blog"> <a href="https://ftl-radio.tumblr.com/" target="_blank" rel="noopener noreferrer"> <img src="images/trigger-blog.png" alt="Visit FTL Radio Blog on Tumblr"> </a> <span class="trigger-label">BLOG</span> </div>
+        <div class="visual-item trigger" id="trigger-music"> <a href="discography.html"> <img src="images/trigger-music.png" alt="Music Section"> </a> <span class="trigger-label">DISCOGRAPHY</span> </div>
+        <!-- === NO OTHER DIVS SHOULD BE HERE === -->
+
+    </div> <!-- End of .canvas -->
+
+
+        <!-- === COLLAGE ITEMS REMOVED FOR PERFORMANCE === -->
+
+    </div> <!-- End of .canvas -->
+
+    <!-- Hidden Modals (Place AFTER .canvas) -->
+
+        <!-- Booking Modal -->
+        <div class="modal" id="modal-booking">
+            <div class="modal-content">
+              <button class="close-button" aria-label="Close modal">×</button>
+              <div class="modal-header">
+                <span>STUDIO BOOKING</span>
+              </div>
+      
+              <!-- Formspree Integration: action points to your endpoint -->
+              <!-- Revised Structure: Labels/Inputs are direct children for easier grid alignment -->
+              <form id="booking-form" action="https://formspree.io/f/xvgakwvw" method="POST">
+      
+                <!-- Email Label -->
+                <label for="email">EMAIL</label>
+                <!-- Email Input -->
+                <input type="email" id="email" name="email" required>
+      
+                <!-- Subject Label -->
+                <label for="subject">SUBJECT</label>
+                <!-- Subject Input -->
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select Service...</option>
+                  <option value="Recording">Recording</option>
+                  <option value="Mixing/Mastering">Mixing/Mastering</option>
+                  <option value="Post Production">Post Production</option>
+                  <option value="Podcasting">Podcasting</option>
+                  <option value="Consultation">Consultation</option>
+                </select>
+      
+                <!-- Conditional Mix/Master Options (Still wrapped in form-row for spanning) -->
+                <div class="form-row conditional-options" id="mixmaster-options">
+                  <label class="sub-label">Mix/Master Add-ons</label>
+                  <div class="checkbox-group">
+                    <div>
+                      <input type="checkbox" id="add-mix-revision" name="add_mix_revision" value="yes">
+                      <label for="add-mix-revision">Additional Mix Revision (From R150 / ~$8-10)</label>
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Conditional Post-Prod Options (Still wrapped in form-row for spanning) -->
+                <div class="form-row conditional-options" id="postprod-options">
+                  <label class="sub-label">Primary Post-Production Needs</label>
+                  <div class="checkbox-group">
+                    <div> <input type="checkbox" id="need-dialogue" name="need_dialogue" value="yes"> <label for="need-dialogue">Dialogue Editing / Cleaning</label> </div>
+                    <div> <input type="checkbox" id="need-sound-design" name="need_sound_design" value="yes"> <label for="need-sound-design">Sound Design</label> </div>
+                    <div> <input type="checkbox" id="need-adr" name="need_adr" value="yes"> <label for="need-adr">ADR Recording / Editing</label> </div>
+                    <div> <input type="checkbox" id="need-mixing-film" name="need_mixing_film" value="yes"> <label for="need-mixing-film">Mixing for Film / Video</label> </div>
+                    <div> <input type="checkbox" id="need-live-setup" name="need_live_setup" value="yes"> <label for="need-live-setup">Live Sound Setup / Consultation</label> </div>
+                    <div> <input type="checkbox" id="need-live-recording" name="need_live_recording" value="yes"> <label for="need-live-recording">Live Recording (TV / Events)</label> </div>
+                  </div>
+                </div>
+      
+                <!-- Message Row (Still wrapped in form-row for spanning) -->
+                <div class="form-row message-row" >
+                  <label for="message">MESSAGE</label>
+                  <textarea id="message" name="message" rows="4" required></textarea> <!-- Reduced rows slightly -->
+                </div>
+      
+                <!-- Submit Button Row (Still wrapped for spanning/centering) -->
+                <div class="form-row form-submit-row">
+                  <button type="submit">SEND EMAIL</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- End Booking Modal -->
+          <!-- === CONDITIONAL OPTIONS START === -->
+
+          <!-- Mixing/Mastering Specific Options (Hidden by default) -->
+          <div class="form-row conditional-options" id="mixmaster-options">
+            <!-- Kept original sub-label -->
+            <label class="sub-label">Mix/Master Add-ons</label>
+            <div class="checkbox-group">
+              <div>
+                <input
+                  type="checkbox"
+                  id="add-mix-revision"
+                  name="add_mix_revision"
+                  value="yes"
+                />
+                <!-- Updated Checkbox Label with Price Indication -->
+                <label for="add-mix-revision"
+                  >Additional Mix Revision (From R150 / ~$8-10)</label
+                >
+              </div>
+              <!-- Add other Mix/Master specific checkboxes here if needed -->
+            </div>
+          </div>
+
+          <!-- Post Production Specific Options (Hidden by default) -->
+          <div class="form-row conditional-options" id="postprod-options">
+            <!-- Updated Sub-Label -->
+            <label class="sub-label">Primary Post-Production Needs</label>
+            <div class="checkbox-group">
+              <div>
+                <input
+                  type="checkbox"
+                  id="need-dialogue"
+                  name="need_dialogue"
+                  value="yes"
+                />
+                <!-- Updated Checkbox Label -->
+                <label for="need-dialogue">Dialogue Editing / Cleaning</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="need-sound-design"
+                  name="need_sound_design"
+                  value="yes"
+                />
+                <!-- Updated Checkbox Label -->
+                <label for="need-sound-design">Sound Design</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="need-adr"
+                  name="need_adr"
+                  value="yes"
+                />
+                <!-- Added Checkbox -->
+                <label for="need-adr">ADR Recording / Editing</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="need-mixing-film"
+                  name="need_mixing_film"
+                  value="yes"
+                />
+                <!-- Updated Checkbox Label -->
+                <label for="need-mixing-film">Mixing for Film / Video</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="need-live-setup"
+                  name="need_live_setup"
+                  value="yes"
+                />
+                <!-- Added Checkbox -->
+                <label for="need-live-setup"
+                  >Live Sound Setup / Consultation</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="need-live-recording"
+                  name="need_live_recording"
+                  value="yes"
+                />
+                <!-- Added Checkbox -->
+                <label for="need-live-recording"
+                  >Live Recording (TV / Events)</label
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Add more conditional divs here for other subjects if needed -->
+
+          <!-- === CONDITIONAL OPTIONS END === -->
+
+          <!-- Message Row -->
+          <div class="form-row">
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <!-- Submit Button Row -->
+          <div class="form-row form-submit-row">
+            <label></label>
+            <button type="submit">SEND EMAIL</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Booking Modal -->
+
+    <!-- Beat Store Modal -->
+    <div class="modal" id="modal-beats">
+      <div class="modal-content">
+        <button class="close-button" aria-label="Close modal">×</button>
+        <h2>Beat Store</h2>
+
+        <!-- SoundCloud Embed Code -->
+        <div class="soundcloud-embed">
+          <iframe
+            width="100%"
+            height="350"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2014948602%3Fsecret_token%3Ds-VPfdafU6wH1&color=%23242522&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+          ></iframe>
+          <div
+            style="
+              font-size: 10px;
+              color: #cccccc;
+              line-break: anywhere;
+              word-break: normal;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-family: Interstate, Lucida Grande, Lucida Sans Unicode,
+                Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+              font-weight: 100;
+            "
+          >
+            <a
+              href="https://soundcloud.com/ftlradio"
+              title="ftl radio"
+              target="_blank"
+              style="color: #cccccc; text-decoration: none"
+              >ftl radio</a
+            >
+            ·
+            <a
+              href="https://soundcloud.com/ftlradio/sets/beats-by-ftl-radio/s-VPfdafU6wH1"
+              title="Beats by FTL Radio"
+              target="_blank"
+              style="color: #cccccc; text-decoration: none"
+              >Beats by FTL Radio</a
+            >
+          </div>
+        </div>
+        <!-- End SoundCloud Embed Code -->
+
+        <h3 class="licensing-title">Licensing Options</h3>
+        <div class="licensing-options">
+          <!-- <div class="license-item"> -->
+            <!-- <span class="license-name">MP3 License</span>
+            <span class="license-price">$39.95</span>
+            <span class="license-details">MP3</span> -->
+          </div>
+          <div class="license-item">
+            <span class="license-name">Wav License</span>
+            <span class="license-price">$60.00</span>
+            <span class="license-details">WAV, MP3</span>
+          </div>
+          <div class="license-item">
+            <span class="license-name">Trackout License</span>
+            <span class="license-price">$100.00</span>
+            <span class="license-details">WAV, MP3, STEMS</span>
+          </div>
+          <!-- <div class="license-item">
+            <span class="license-name">Unlimited License</span>
+            <span class="license-price">$150.00</span>
+            <span class="license-details">WAV, MP3, STEMS</span>
+          </div> -->
+          <div class="license-item">
+            <span class="license-name">Unlimited License</span>
+            <span class="license-price">$150.00</span>
+            <span class="license-details">WAV, MP3, STEMS, EXCLUSIVE USE</span>
+          </div>
+        </div>
+
+        <p class="purchase-instruction">
+          Hear something you like? Email me at
+          <a href="mailto:nashftlradio@gmail.com"
+            ><strong>nashftlradio@gmail.com</strong></a
+          >
+          with the <strong>beat name</strong> and desired
+          <strong>license type</strong> for purchase inquiries.
+        </p>
+      </div>
+    </div>
+    <!-- End Beat Store Modal -->
+
+    <!-- Mixing & Mastering Modal -->
+    <div class="modal" id="modal-mixmaster">
+      <div class="modal-content">
+        <button class="close-button" aria-label="Close modal">×</button>
+        <h2>Mixing & Mastering</h2>
+
+        <p class="intro-text">
+          Achieve radio-ready polish, clarity, and international standard
+          loudness for your music. Get professional results with a fast
+          turnaround, without compromising quality.
+        </p>
+
+        <h3 class="service-category">Vocals</h3>
+        <ul class="service-list">
+          <li>
+            <span class="service-name">Mix & Master (1-8 Stems)</span>
+            <span class="service-price">R1000 (~$55-60 USD)</span>
+          </li>
+          <li>
+            <span class="service-name">Mix & Master (9-20 Stems)</span>
+            <span class="service-price">R1500 (~$80-90 USD)</span>
+          </li>
+          <li>
+            <span class="service-name">Additional Vocalists (1-12 Stems)</span>
+            <span class="service-price">R300 (~$15-20 USD) per vocalist</span>
+          </li>
+          <li>
+            <span class="service-name">Additional Mix Revisions</span>
+            <span class="service-price">R150 (~$8-10 USD) per revision</span>
+            <span class="service-note"
+              >(Initial revisions may be included - confirm during
+              booking)</span
+            >
+          </li>
+        </ul>
+
+        <h3 class="service-category">Instrumentals</h3>
+        <ul class="service-list">
+          <li>
+            <span class="service-name">Mix & Master (Instrumental Beat)</span>
+            <span class="service-price">R1000 (~$55-60 USD)</span>
+          </li>
+          <li>
+            <span class="service-name">Additional Revisions</span>
+            <span class="service-price">R150 (~$8-10 USD) per revision</span>
+          </li>
+        </ul>
+
+        <p class="deliverable-note">
+          All services deliver high-quality WAV files ready for distribution.
+        </p>
+
+        <p class="contact-instruction">
+          Ready to elevate your sound? Please close this window and use the
+          <strong>Studio Booking</strong> form (select 'Mixing/Mastering' as the
+          subject) to submit your project details. <br />Or email me directly
+          at:
+          <a href="mailto:nashftlradio@gmail.com"
+            ><strong>nashftlradio@gmail.com</strong></a
+          >
+        </p>
+      </div>
+    </div>
+    <!-- End Mixing & Mastering Modal -->
+
+    <!-- Post Production Modal -->
+    <div class="modal" id="modal-postprod">
+      <div class="modal-content">
+        <button class="close-button" aria-label="Close modal">×</button>
+        <h2>Post Production Audio</h2>
+
+        <p class="intro-text">
+          Professional audio post-production services for film, television, web
+          content, podcasts, and more. Delivering high-quality results
+          efficiently.
+        </p>
+
+        <h3 class="service-category">Services Offered</h3>
+        <ul class="service-list">
+          <li>
+            <span class="service-name">Dialogue Editing & Cleaning</span>
+            <span class="service-note"
+              >Clear and intelligible voice tracks.</span
+            >
+          </li>
+          <li>
+            <span class="service-name">Sound Design</span>
+            <span class="service-note"
+              >Creating immersive soundscapes for film, games, animation.</span
+            >
+          </li>
+          <li>
+            <span class="service-name">ADR Recording & Editing</span>
+            <span class="service-note">Seamless dialogue replacement.</span>
+          </li>
+          <li>
+            <span class="service-name">Mixing for Film & Video</span>
+            <span class="service-note"
+              >Stereo and surround mixing to broadcast/web standards.</span
+            >
+          </li>
+          <li>
+            <span class="service-name">Live Sound Setup & Consultation</span>
+            <span class="service-note">Ensuring optimal sound for events.</span>
+          </li>
+          <li>
+            <span class="service-name">Live Recording (TV/Events)</span>
+            <span class="service-note"
+              >Capturing high-quality audio on location.</span
+            >
+          </li>
+        </ul>
+
+        <p class="pricing-note">
+          Post-production project scope can vary greatly. All services are
+          priced on a per-project basis.
+        </p>
+
+        <p class="contact-instruction">
+          To discuss your project and get a custom quote, please close this
+          window and use the <strong>Studio Booking</strong> form (select 'Post
+          Production' as the subject). <br />Alternatively, email me directly
+          at:
+          <a href="mailto:nashftlradio@gmail.com"
+            ><strong>nashftlradio@gmail.com</strong></a
+          >
+        </p>
+      </div>
+    </div>
+    <!-- End Post Production Modal -->
+
+    <!-- Background Overlay for Modals -->
+    <div class="modal-overlay"></div>
+
+        <!-- === Background Audio Removed === -->
+
+    <!-- JavaScript Link (At the end of body) -->
+    <script src="script.js"></script>
+  </body>
+</html>

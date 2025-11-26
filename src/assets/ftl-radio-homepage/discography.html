@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FTL Radio - Discography</title>
+    <!-- Link to the NEW CSS file -->
+    <link rel="stylesheet" href="music-style.css" />
+
+    <!-- Add Google Font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>DISCOGRAPHY</h1>
+      <a href="index.html" class="back-link">< Back to Home</a>
+    </header>
+
+    <!-- Grid Container for Album Covers -->
+    <main id="discography-grid" class="grid-container">
+      <!-- ADD Placeholder Text -->
+      <p id="grid-loading-message" class="loading-message">
+        Loading Discography...
+      </p>
+      <!-- Album covers will be dynamically inserted here by JavaScript -->
+    </main>
+
+    <!-- Hidden Modal Structure (Single modal reused for all items) -->
+    <div class="modal" id="disco-modal">
+      <div class="modal-content">
+        <!-- Ensure close button has aria-label -->
+        <button class="close-button" aria-label="Close modal">×</button>
+        <div class="modal-body">
+          <div class="modal-cover">
+            <img id="modal-img" src="" alt="Album Cover" />
+            <!-- Keep empty src -->
+          </div>
+          <div class="modal-details">
+            <h2 id="modal-title"></h2>
+            <!-- Keep empty -->
+            <p id="modal-artist"></p>
+            <!-- Keep empty -->
+            <p id="modal-year-label"></p>
+            <!-- Keep empty -->
+            <div class="modal-roles">
+              <h3>My Role(s):</h3>
+              <ul id="modal-roles-list"></ul>
+              <!-- Keep empty -->
+            </div>
+            <div id="modal-links" class="modal-links"></div>
+            <!-- Keep empty -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Background Overlay for Modals -->
+    <div class="modal-overlay"></div>
+    <!-- Keep this -->
+
+    <!-- Link to the JavaScript file for this page -->
+    <script src="discography.js"></script>
+  </body>
+</html>

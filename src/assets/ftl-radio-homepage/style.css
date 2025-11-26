@@ -1,0 +1,891 @@
+/* --- Define Custom Font --- */
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("fonts/PixelifySans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 700; /* Use the available weight range */
+  font-display: swap;
+}
+/* --- Basic Page Setup --- */
+body {
+  background-color: #000000; /* Fallback black */
+  /* UPDATED BACKGROUND IMAGE */
+  background-image: url("images/static-dark.gif"); /* Changed filename */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling if GIF is small */
+  background-attachment: fixed; /* Keep background fixed */
+
+  color: #e0e0e0;
+  font-family: "Pixelify Sans", "Courier New", Courier, monospace;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100dvh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Canvas Area (Using CSS Grid) --- */
+.canvas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 40px 20px;
+  padding: 50px;
+  height: 100dvh;
+  box-sizing: border-box;
+  place-items: center;
+}
+
+/* --- Visual Items (Grid Items) --- */
+.visual-item {
+  padding: 5px;
+  text-align: center;
+}
+
+/* Ensure images within items scale correctly */
+.visual-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  margin: 0 auto;
+}
+
+/* Direct link styling within a trigger item */
+.visual-item a {
+  display: block;
+}
+
+/* Specific styling for TRIGGER items (Revised for Gaming UI Feel) */
+.visual-item.trigger {
+  cursor: pointer;
+  /* INCREASE max-width for bigger items */
+  max-width: 180px; /* Increased from 120px - adjust further if needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Slightly increased gap */
+
+  /* --- Style Updates --- */
+  /* DECREASE opacity for more transparency */
+  background-color: rgba(
+    50,
+    50,
+    50,
+    0.4
+  ); /* Opacity down to 0.4 (from 0.85) - adjust */
+  border: 2px solid #666; /* Keep border distinct, maybe slightly darker */
+  padding: 15px; /* Increased padding */
+  border-radius: 6px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease-out, transform 0.15s ease-out,
+    box-shadow 0.2s ease-out;
+}
+
+/* Hover state - Adjust transparency here too */
+.visual-item.trigger:hover {
+  /* Adjust hover background opacity */
+  background-color: rgba(70, 70, 70, 0.55); /* Example: 0.55 opacity */
+  border-color: #888; /* Slightly lighter border */
+  transform: scale(1.05); /* Keep scale up */
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3),
+    3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 8px rgba(180, 180, 180, 0.2);
+}
+
+/* Active (Click) state - Adjust transparency here too */
+.visual-item.trigger:active {
+  /* Adjust active background opacity */
+  background-color: rgba(30, 30, 30, 0.6); /* Example: 0.6 opacity */
+  transform: scale(0.98);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Styling for Trigger Labels (Keep as is or adjust color if needed) */
+.trigger-label {
+  display: block;
+  font-family: "Pixelify Sans", "Courier New", monospace;
+  font-size: 1rem; /* Keep or adjust */
+  font-weight: 700;
+  color: #e0e0e0; /* Ensure bright enough */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7); /* Adjusted shadow slightly */
+}
+
+/* --- Modal Styling --- */
+
+/* Overlay */
+.modal-overlay {
+  /* display: none; REMOVED - Use opacity/visibility instead */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  /* --- ADDED for Transition --- */
+  opacity: 0; /* Start fully transparent */
+  visibility: hidden; /* Start hidden and non-interactive */
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; /* Fade effect, delay visibility change */
+}
+
+/* Modal Window */
+.modal {
+  /* display: none; REMOVED - Use opacity/visibility instead */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* Combine transform for centering AND initial scale */
+  transform: translate(-50%, -50%) scale(0.95); /* Center and start slightly smaller */
+
+  background-color: #1a1a1a; /* Fallback color */
+  background-image: url("images/texture-static-noise.jpg");
+  background-size: cover;
+  background-position: center center;
+  border: 1px solid #444;
+  padding: 0; /* Padding handled by modal-content */
+  z-index: 1001;
+
+  /* --- RESPONSIVE WIDTH --- */
+  width: 90%; /* Use percentage for base width */
+  max-width: 550px; /* Set maximum pixel width for desktop */
+  /* --- END RESPONSIVE WIDTH --- */
+
+  max-height: 85vh; /* Your current height */
+  overflow-y: auto; /* Allow modal itself to scroll */
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+
+  /* --- ADDED for Transition --- */
+  opacity: 0; /* Start fully transparent */
+  visibility: hidden; /* Start hidden and non-interactive */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    visibility 0s linear 0.3s; /* Fade and scale effect */
+}
+
+/* Modal Content Area */
+.modal-content {
+  /* INCREASED Opacity significantly */
+  background-color: rgba(20, 20, 20, 0.92); /* Darker, more opaque layer */
+  padding: 30px 40px; /* Slightly increased padding */
+  border-radius: 3px;
+  box-sizing: border-box;
+  /* Add subtle text shadow globally within modal content for readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Main Title */
+.modal-content h2 {
+  margin-top: 0;
+  color: #f0f0f0; /* Brighter title */
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.6rem; /* Larger title */
+  font-weight: 700; /* Ensure bold */
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Stronger shadow for title */
+}
+
+/* Modal Paragraphs */
+.modal-content p {
+  line-height: 1.7; /* Slightly more line spacing */
+  color: #d0d0d0; /* Adjust paragraph color */
+  margin-bottom: 18px;
+  font-size: 0.95rem; /* Slightly larger paragraph text */
+  font-weight: 500; /* Regular weight */
+}
+/* Modal Links */
+.modal-content a {
+  color: #5faaff;
+  text-decoration: none;
+  font-weight: 600;
+} /* Slightly bolder links */
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s ease;
+  z-index: 1002;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Shadow on close button too */
+}
+.close-button:hover {
+  color: #f0f0f0;
+}
+
+/* --- Visible States (UPDATED) --- */
+.modal-overlay.visible,
+.modal.visible {
+  /* display: block; REMOVED */
+  opacity: 1; /* Fade In */
+  visibility: visible; /* Make visible and interactive */
+  transition-delay: 0s; /* Remove delay when becoming visible */
+}
+
+/* Specifically reset transform for the modal when visible */
+.modal.visible {
+  transform: translate(-50%, -50%) scale(1); /* Scale back to normal size */
+}
+
+/* --- Booking Form Styling --- */
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #ddd;
+  border-top: 2px solid #555;
+  border-bottom: 2px solid #555;
+  padding: 8px 0;
+  background: linear-gradient(to right, #555 5px, transparent 5px),
+    linear-gradient(to left, #555 5px, transparent 5px);
+  background-repeat: repeat-y;
+  background-size: 5px 1px;
+  font-weight: 700; /* Bold header */
+}
+.modal-header span {
+  background-color: rgba(20, 20, 20, 0.92); /* Match modal-content bg */
+  padding: 0 15px;
+}
+#booking-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px 10px;
+  align-items: center;
+}
+#booking-form > label {
+  background-color: #444;
+  color: #ddd;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  display: block;
+  border: 1px solid #555;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+  min-width: 80px;
+  grid-column: 1 / 2;
+  font-weight: 700;
+}
+#booking-form > input[type="email"],
+#booking-form > select {
+  background-color: #ccc;
+  border: 1px solid #555;
+  padding: 9px 11px; /* Slightly taller inputs */
+  font-size: 0.95rem;
+  color: #111;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 50%, transparent 50%);
+  background-size: 100% 2px;
+  grid-column: 2 / 3;
+  font-weight: 500;
+}
+#booking-form > select {
+  appearance: none;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 50%, transparent 50%),
+    linear-gradient(45deg, transparent 50%, #555 50%),
+    linear-gradient(135deg, #555 50%, transparent 50%);
+  background-position: center right 15px, center right 10px, center right 10px;
+  background-size: 100% 2px, 5px 5px, 5px 5px;
+  background-repeat: repeat-y, no-repeat, no-repeat;
+  padding-right: 30px;
+}
+#booking-form .message-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 10px;
+  align-items: start;
+}
+#booking-form .message-row > label {
+  background-color: #444;
+  color: #ddd;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  display: block;
+  border: 1px solid #555;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+  min-width: 80px;
+  grid-column: 1 / 2;
+  margin-top: 0;
+  font-weight: 700;
+}
+#booking-form .message-row > textarea {
+  background-color: #ccc;
+  border: 1px solid #555;
+  padding: 9px 11px;
+  font-size: 0.95rem;
+  color: #111;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.03) 50%, transparent 50%);
+  background-size: 100% 2px;
+  grid-column: 2 / 3;
+  resize: vertical;
+  font-weight: 500;
+}
+#booking-form .conditional-options {
+  display: none;
+  grid-column: 1 / -1;
+  padding: 10px 0 10px 10px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-top: 1px dashed #444;
+  margin-top: -15px;
+  margin-bottom: -5px;
+}
+#booking-form .conditional-options.visible {
+  display: block;
+}
+#booking-form .conditional-options .sub-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: left;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  min-width: auto;
+  font-weight: 700;
+}
+#booking-form .checkbox-group {
+  text-align: left;
+}
+#booking-form .checkbox-group div {
+  margin-bottom: 8px;
+}
+#booking-form .conditional-options input[type="checkbox"] {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+#booking-form .conditional-options label:not(.sub-label) {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #d0d0d0;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  min-width: auto;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+  font-weight: 500;
+}
+#booking-form .form-submit-row {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 25px; /* More space above button */
+}
+#booking-form button[type="submit"] {
+  background-color: #333;
+  color: #ddd;
+  border: 1px solid #555;
+  padding: 11px 28px; /* Slightly larger button */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3),
+    1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease;
+  font-weight: 700; /* Bold button text */
+}
+#booking-form button[type="submit"]:hover {
+  background-color: #444;
+}
+#booking-form button[type="submit"]:active {
+  background-color: #222;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Beat Store Licensing Styling --- */
+
+.soundcloud-embed {
+  margin-bottom: 25px;
+}
+.licensing-title {
+  color: #ddd;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+.licensing-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.license-item {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+.license-name {
+  font-weight: 700;
+  color: #eee;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.license-price {
+  color: #5faaff;
+  font-size: 1.1rem;
+  font-weight: 700; /* Already bold */
+  margin-bottom: 8px;
+  /* ADD THIS LINE to override the default pixel font */
+  font-family: "Courier New", Courier, monospace;
+}
+.license-details {
+  font-size: 0.75rem;
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.purchase-instruction {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+.purchase-instruction strong {
+  color: #eee;
+}
+
+/* --- Mix/Master Service Styling --- */
+
+#modal-mixmaster .intro-text {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.95rem;
+  color: #d0d0d0;
+}
+#modal-mixmaster .service-category {
+  color: #ddd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #555;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+#modal-mixmaster .service-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+#modal-mixmaster .service-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 9px 0;
+  border-bottom: 1px dashed #444;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+#modal-mixmaster .service-list li:last-child {
+  border-bottom: none;
+}
+#modal-mixmaster .service-name {
+  color: #d0d0d0;
+  flex-basis: 65%;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+#modal-mixmaster .service-price {
+  color: #eee;
+  font-weight: 700; /* Already bold */
+  flex-basis: 30%;
+  text-align: right;
+  font-size: 0.85rem; /* Your adjusted smaller size */
+  /* ADD THIS LINE to override the default pixel font */
+  font-family: "Courier New", Courier, monospace;
+}
+#modal-mixmaster .service-note {
+  display: block;
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: #999;
+  text-align: right;
+  padding-top: 3px;
+  font-weight: 500;
+}
+#modal-mixmaster .deliverable-note {
+  font-style: italic;
+  color: #999;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 0.85rem;
+}
+#modal-mixmaster .contact-instruction {
+  text-align: center;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #d0d0d0;
+}
+#modal-mixmaster .contact-instruction strong {
+  color: #eee;
+}
+
+/* --- Post Production Service Styling --- */
+
+#modal-postprod .intro-text {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #d0d0d0;
+  font-size: 0.95rem;
+}
+#modal-postprod .service-category {
+  color: #ddd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #555;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+#modal-postprod .service-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 25px;
+}
+#modal-postprod .service-list li {
+  padding: 10px 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #333;
+}
+#modal-postprod .service-list li:last-child {
+  border-bottom: none;
+}
+#modal-postprod .service-name {
+  display: block;
+  color: #eee;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  text-align: left;
+}
+#modal-postprod .service-note {
+  display: block;
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: left;
+  line-height: 1.4;
+  padding-left: 5px;
+  font-weight: 500;
+}
+#modal-postprod .pricing-note {
+  font-style: italic;
+  color: #aaa;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+#modal-postprod .contact-instruction {
+  text-align: center;
+  line-height: 1.6;
+  color: #d0d0d0;
+  font-size: 0.95rem;
+}
+#modal-postprod .contact-instruction strong {
+  color: #eee;
+}
+#modal-postprod .contact-instruction a {
+  color: #5faaff;
+}
+#modal-postprod .contact-instruction a:hover {
+  text-decoration: underline;
+}
+
+/* --- Conditional Form Styling --- */
+#booking-form .conditional-options {
+  display: none;
+  grid-column: 1 / -1;
+  padding: 10px 0 10px 10px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-top: 1px dashed #444;
+  margin-top: -15px;
+  margin-bottom: -5px;
+}
+#booking-form .conditional-options.visible {
+  display: block;
+}
+#booking-form .conditional-options .sub-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-align: left;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  min-width: auto;
+  font-weight: 700;
+}
+#booking-form .checkbox-group {
+  text-align: left;
+}
+#booking-form .checkbox-group div {
+  margin-bottom: 8px;
+}
+#booking-form .conditional-options input[type="checkbox"] {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+#booking-form .conditional-options label:not(.sub-label) {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #d0d0d0;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  min-width: auto;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: normal;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* --- Loading Screen Styling --- */
+
+#loading-screen {
+  position: fixed; /* Cover viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Fallback color */
+  background-image: url("images/tv-static.gif"); /* Your static GIF */
+  background-size: cover; /* Cover the screen */
+  background-position: center;
+  z-index: 9999; /* Highest layer */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center main content vertically */
+  align-items: center; /* Center main content horizontally */
+  text-align: center;
+  cursor: pointer; /* Indicate it's clickable */
+  opacity: 1; /* Start visible */
+  visibility: visible;
+  transition: opacity 0.6s ease-out, visibility 0s linear 0s; /* Smoother fade-out */
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, visibility 0s linear 0.6s; /* Delay hiding */
+}
+
+.loading-content {
+  /* Styles specific to the main centered block if needed */
+}
+
+.loading-title {
+  font-family: "Pixelify Sans", "Courier New", monospace;
+  font-size: 6rem; /* Adjust size */
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 0 0 20px 0; /* Margin below title */
+  text-shadow: 3px 3px 0px rgba(100, 100, 100, 0.5),
+    /* Simple shadow */ 5px 5px 0px rgba(50, 50, 50, 0.3);
+  letter-spacing: 2px;
+}
+
+.loading-prompt {
+  font-family: "Pixelify Sans", "Courier New", monospace;
+  font-size: 1.5rem; /* Adjust size */
+  font-weight: 600;
+  color: #e0e0e0;
+  margin: 20px 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.blink-indicator {
+  display: inline-block; /* Allow animation */
+  margin-right: 10px; /* Space between indicator and text */
+  animation: blink 1s step-end infinite; /* Apply blinking animation */
+}
+
+.loading-copyright {
+  position: absolute; /* Position at bottom */
+  bottom: 20px; /* Distance from bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  font-family: "Pixelify Sans", "Courier New", monospace;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #aaa;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Blinking Animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Make sure existing canvas/body rules are still correct --- */
+/* (No changes needed to previous CSS from here down based on this addition) */
+
+/* ============================ */
+/* === Mobile Responsiveness === */
+/* ============================ */
+
+/* Apply styles for screens 600px wide or less */
+@media (max-width: 600px) {
+  /* Make canvas padding smaller on mobile */
+  .canvas {
+    padding: 20px;
+    gap: 25px 15px; /* Reduce grid gap */
+    grid-template-columns: repeat(2, 1fr); /* Maybe 2 columns on mobile? */
+    /* Or keep 3 columns if icons are small enough */
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
+
+  /* Slightly smaller trigger items on mobile? */
+  .visual-item.trigger {
+    max-width: 100px; /* Example adjustment */
+  }
+  .trigger-label {
+    font-size: 0.85rem; /* Smaller label text */
+  }
+
+  /* Adjust Modal size and padding */
+  .modal {
+    width: 95%; /* Take up more screen width */
+    max-width: 95%; /* Override desktop max-width */
+    max-height: 90vh; /* Allow slightly more height */
+  }
+  .modal-content {
+    padding: 20px 25px; /* Reduce padding inside modal content */
+  }
+  .modal-content h2 {
+    font-size: 1.3rem; /* Smaller main title */
+  }
+
+  /* --- Stack Booking Form Elements Vertically --- */
+  #booking-form {
+    grid-template-columns: 1fr; /* Change to single column */
+    gap: 10px 0; /* Reduce row gap, no column gap */
+  }
+
+  /* Labels take full width above inputs */
+  #booking-form > label {
+    grid-column: 1 / -1; /* Span full width */
+    text-align: left; /* Align label text left */
+    margin-bottom: -5px; /* Reduce space below label */
+  }
+
+  /* Inputs take full width below labels */
+  #booking-form > input[type="email"],
+  #booking-form > select {
+    grid-column: 1 / -1; /* Span full width */
+  }
+
+  /* Message row also becomes single column */
+  #booking-form .message-row {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 5px 0; /* Small gap */
+  }
+  #booking-form .message-row > label,
+  #booking-form .message-row > textarea {
+    grid-column: 1 / -1; /* Span full width */
+    text-align: left;
+  }
+
+  /* Adjust conditional options padding/layout if needed */
+  #booking-form .conditional-options {
+    padding: 10px;
+  }
+  #booking-form .conditional-options .sub-label {
+    margin-bottom: 5px;
+  }
+
+  /* Adjust Beat Store licensing layout if needed */
+  .licensing-options {
+    grid-template-columns: 1fr; /* Stack license items */
+  }
+
+  /* Adjust Mix/Master + PostProd list layout if needed */
+  #modal-mixmaster .service-list li,
+  #modal-postprod .service-list li {
+    flex-direction: column; /* Stack name/price/note */
+    align-items: flex-start; /* Align left */
+    gap: 5px;
+  }
+  #modal-mixmaster .service-name,
+  #modal-mixmaster .service-price,
+  #modal-postprod .service-name {
+    flex-basis: auto; /* Reset flex basis */
+    text-align: left; /* Ensure left align */
+  }
+  #modal-mixmaster .service-price,
+  #modal-mixmaster .service-note {
+    text-align: left; /* Align price/note left */
+    font-size: 0.8rem; /* Slightly smaller price/note */
+  }
+  #modal-postprod .service-note {
+    padding-left: 0; /* Remove indent */
+  }
+} /* End of @media query */
