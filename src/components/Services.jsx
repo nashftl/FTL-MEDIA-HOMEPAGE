@@ -100,7 +100,7 @@ const Services = () => {
         <div className="text-center mt-12">
           <button 
             onClick={() => navigate('/services')}
-            className="bg-black dark:bg-white text-white dark:text-black px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-800 dark:hover:bg-gray-200 hover:scale-105 hover:shadow-xl active:scale-95"
+            className="border border-black dark:border-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black hover:scale-105 active:scale-95"
           >
             See All Services
           </button>

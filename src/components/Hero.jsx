@@ -16,15 +16,13 @@ const Hero = () => {
         {/* Hero Content (Text and Buttons) */}
         <div className="md:w-1/2 text-center md:text-left px-4">
           <p className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-2">
-            Official Partner of FTL Radio
+            Partner of FTL Radio – Your Marketing & PR Ally
           </p>
           <h1 className="text-5xl font-bold mb-4">
-            Marketing & Web Services for the Music Industry
+            FTL Media – Marketing, PR, Social Media for Small Businesses & Individuals
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-            FTL Media delivers cutting-edge marketing and web development solutions 
-            tailored for artists, labels, and creative businesses. From music production 
-            tools to e-commerce platforms, we bring your vision to life.
+            We help small businesses and creators amplify their brand through strategic marketing, public relations, and social media management. Our music label, FTL Radio, also offers specialty services like music production and video editing.
           </p>
           {/* Call to Action Buttons */}
           <div className="flex justify-center md:justify-start space-x-4">
